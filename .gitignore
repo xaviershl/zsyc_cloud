@@ -1,0 +1,7 @@
+/target/
+/.settings/
+.vscode
+.idea
+gulpfile.js
+.gitmodules
+/bin/

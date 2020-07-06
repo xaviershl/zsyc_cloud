@@ -1,0 +1,347 @@
+html,
+body {
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+#app {
+  height: 100%;
+  font-size: 0.2rem;
+  background: #fff;
+}
+#app > header {
+  height: 0.88rem;
+  background-color: #376da0;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.38rem;
+  padding: 0.25rem;
+}
+#app > header .iconfont {
+  font-size: 0.4rem;
+}
+#app > header .bgwhiterol {
+  width: 0.66rem;
+  height: 0.66rem;
+  border-radius: 50%;
+  background-color: #5583ae;
+  text-align: center;
+  line-height: 0.66rem;
+}
+#app #tips {
+  position: fixed;
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  padding: 0 0.2rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #cf6161;
+  font-size: 0.24rem;
+  color: #fff;
+  transition: all 0.5s;
+  transform: translateY(-100%);
+}
+#app #tips.show {
+  transform: translateY(0%);
+}
+#app #frameContainer {
+  padding: 0.6rem 0.3rem 0 0.3rem;
+  position: relative;
+  height: calc(100% - 0.88rem);
+}
+#app #frameContainer footer {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: 0.1rem;
+  font-size: 0.14rem;
+  left: 0;
+  transform: scale(0.8);
+  color: #999999;
+}
+#app #frameContainer .frameCell {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #fff;
+  border: none;
+}
+#app #searchBar {
+  position: relative;
+  width: 6.9rem;
+  height: 0.6rem;
+  background-color: #eeeeee;
+  border-radius: 0.3rem;
+  display: flex;
+  padding: 0 0.3rem;
+  justify-content: space-between;
+  margin: 0 auto 0.6rem auto;
+  align-items: center;
+}
+#app #searchBar > input {
+  height: 0.58rem;
+  border: none;
+  background: none;
+  width: 6rem;
+}
+#app #searchBar > input::-webkit-input-placeholder {
+  color: #999999;
+}
+#app #searchBar .icon-sou {
+  font-size: 0.4rem;
+  color: black;
+  font-weight: bolder;
+}
+#app #searchResContianer {
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0.8rem;
+  left: 5%;
+  width: 90%;
+  border-radius: 0.08rem;
+  padding: 0.1rem;
+}
+#app #searchResContianer .icon-toolClose {
+  position: absolute;
+  right: 0.02rem;
+  top: 0.02rem;
+}
+#app #searchResContianer .searchResContianerCell {
+  padding: 0.1rem;
+  letter-spacing: 1px;
+}
+#app #searchResContianer .searchResContianerCell:not(:last-child) {
+  border-bottom: 1px dashed #ccc;
+}
+#app .myCollection {
+  margin-bottom: 0.6rem;
+}
+#app .frameList .title {
+  font-size: 0.3rem;
+  color: #333;
+  font-weight: bolder;
+}
+#app .frameList .frameListContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#app .frameList .frameListContainer .frameListCell {
+  width: 3.3rem;
+  height: 1.16rem;
+  border: 1px solid #ccc;
+  border-radius: 0.05rem;
+  text-align: center;
+  margin-top: 0.3rem;
+}
+#app .frameList .frameListContainer .frameListCell div {
+  height: 0.5rem;
+  line-height: 0.5rem;
+}
+#app .frameList .frameListContainer .frameListCell div:first-child {
+  font-size: 0.28rem;
+  font-weight: bolder;
+  color: #555;
+}
+#app .frameList .frameListContainer .frameListCell div:last-child {
+  background-color: #eeeeee;
+  color: #999999;
+  width: 2.8rem;
+  margin: 0 auto;
+  border-radius: 0.05rem;
+}
+#app #mainmeun {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  transition: all 0.3s;
+  height: 100%;
+}
+#app .meunshowstatus {
+  left: 0;
+}
+#app #meunCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+#app #meunContainer {
+  width: 3.8rem;
+  height: 100%;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.4rem 0.4rem 0 0.4rem;
+  transition: all 0.3s;
+}
+#app #changeSystem {
+  border-radius: 0.08rem;
+  font-size: 0.28rem;
+  font-weight: bolder;
+  background-color: #eeeeee;
+  position: relative;
+  height: 0.6rem;
+  align-items: center;
+  padding: 0 0.05rem;
+  overflow: hidden;
+}
+#app #changeSystem > select {
+  width: 100%;
+  border: none;
+  background: none;
+  height: 0.6rem;
+  font-weight: bolder;
+}
+#app #changeSystem > span {
+  display: inline-block;
+  height: 100%;
+  width: 0.6rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #eeeeee;
+  line-height: 0.6rem;
+  text-align: center;
+}
+#app #changeSystem > span .icon-xitongxuankuangxiala {
+  font-size: 0.5rem;
+}
+#app #mainmeunContainer {
+  height: calc(100% - 1rem);
+  margin-top: 0.4rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+#app #mainmeunContainer .mainmeunContainerCell header {
+  font-size: 0.28rem;
+  font-weight: bolder;
+  margin-bottom: 0.4rem;
+}
+#app #mainmeunContainer .mainmeunContainerCell > ul > li {
+  margin-bottom: 0.4rem;
+  padding-left: 0.2rem;
+}
+#app #userInfo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#app #userInfo header {
+  color: #3E6BA0;
+  font-size: 0.35rem;
+  height: 0.8rem;
+  border-bottom: 2px solid #3E6BA0;
+  line-height: 0.7rem;
+  display: flex;
+  justify-content: space-between;
+}
+#app #userInfo footer {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 0.3rem;
+}
+#app #userInfo #loginOut {
+  background-color: #ff7474;
+  color: #fff;
+  width: 6rem;
+  text-align: center;
+  font-size: 0.3rem;
+  letter-spacing: 0.2rem;
+  text-indent: 0.2rem;
+  padding: 0.2rem 0;
+  border-radius: 0.08rem;
+}
+#app #userInfoCanvas {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+#app #userInfoContainer {
+  width: 6rem;
+  background-color: #fff;
+  border-radius: 0.1rem;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0.3rem;
+}
+#app #userInfoListContainer {
+  background-color: #eeeeee;
+  border-radius: 0.08rem;
+  overflow: hidden;
+  margin-top: 0.2rem;
+  color: #555;
+}
+#app #userInfoListContainer .userInfoCell {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+}
+#app #userInfoListContainer .userInfoCell:last-child {
+  border-bottom: none;
+}
+#app #userInfoListContainer .userInfoCell div {
+  padding: 0.2rem;
+}
+#app #userInfoListContainer .userInfoCell > div:last-child {
+  width: calc(100% - 2rem);
+}
+#app #userInfoListContainer .userInfoCell > div:first-child {
+  width: 2rem;
+  background-color: #CDDDEE;
+  color: #999;
+  text-align: center;
+}
+/* 进度条样式 */
+#progressBar {
+  position: fixed;
+  top: 0;
+  height: 4px;
+  background-color: #40c23e;
+  z-index: 99;
+  width: 0;
+  transition: all 0.5s;
+  animation: growUp 100s linear infinite;
+}
+@keyframes growUp {
+  2% {
+    width: 20%;
+  }
+  4% {
+    width: 80%;
+  }
+  20% {
+    width: 90%;
+  }
+  100% {
+    width: 98%;
+  }
+}
+#DIYContent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  z-index: 2;
+}
+/*# sourceMappingURL=mainFramemobile.css.map */

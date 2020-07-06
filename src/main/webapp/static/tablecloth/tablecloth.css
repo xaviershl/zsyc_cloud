@@ -1,0 +1,18 @@
+/* 
+
+	TableCloth	
+	by Alen Grakalic, brought to you by cssglobe.com
+	
+*/
+
+/* general styles */
+
+.xyz table, td{
+	font:100% Arial, Helvetica, sans-serif; 
+}
+
+.xyz {width:100%;border-collapse:collapse;margin:1em 0;}
+.xyz th,td{text-align:left;padding:.5em;border:1px solid #fff;}
+
+.xyz th{background:#328aa4 url(tr_back.gif) repeat-x;color:#fff;}
+.xyz td{background:#e5f1f4;}

@@ -1,0 +1,66 @@
+xyzDropzone使用说明：
+同一页面允许创建多个xyzDropzone上传控件。
+xyzDropzone.js中除了上传控件xyzDropzone以外，还包含一个上传成功预览显示控件xyzPicPreview
+
+xyzDropzone调用方式：
+引入js（xyzDropzone不需要jquery支持，如果只使用xyzDropzone可以不引入jquery）
+<script src="dropzone.min.js" type="text/javascript"></script>
+<script src="xyzDropzone.js" type="text/javascript"></script>
+需要在html中定义xyzPicPreview的容器div
+<div id="dropzoneInitDiv3" style="width:200px;height:50px;"></div>
+var xyzDropzoneConfig = {
+		params:{"derictoryCode":"reg_pics"},//【选填】
+		maxFiles:100,//【选填】
+		acceptedExtName:".png,.jpg,.jpeg",//【选填】
+		maxFilesize:"1024kb",//【选填】
+		btnText:'上传',//【选填】
+		progress:function(result){},//【选填】文件上传进度回调处理（文件上传过程会持续回调该函数）
+		success:function(result){//【选填】
+			xyzPicPreview.addPic('previewDiv3',result.content.url);
+		},
+		error:function(result){},//【选填】上传失败的回调
+		invalidFileFail:function(result){}//【选填】文件验证不通过的回调，result中包含失败原因
+		invalidFile:function(file){//【选填】实现自己业务需求中特殊的验证，返回true则验证通过，返回其他验证不通过并提示返回值展示给用户
+			return true;
+		}
+};
+xyzDropzoneConfig.xyzDropzone = 'dropzoneInitDiv3';
+xyzDropzoneConfig.btnText = '点击或拖拽文件至此';
+xyzDropzoneConfig.success = function(result){
+	
+}
+xyzDropzone.create(xyzDropzoneConfig);
+
+xyzDropzoneConfig.xyzDropzone = 'dropzoneInitDiv4';
+xyzDropzoneConfig.btnText = '点击dsfds文件至此';
+xyzDropzoneConfig.success = function(result){
+	
+}
+xyzDropzone.create(xyzDropzoneConfig);
+
+
+
+xyzPicPreview调用方式：
+引入js（xyzPicPreview依赖jquery）
+<script src="jquery-1.8.3.js" type="text/javascript"></script>
+<script src="xyzDropzone.js" type="text/javascript"></script>
+<script src="dropzone.min.js" type="text/javascript"></script>
+引入css
+<link href="xyzDropzone/xyzPicPreview.css" type="text/css" rel="stylesheet"/>
+
+需要在html中定义xyzPicPreview的容器div
+<div id="previewDiv3" style="marig:10px;padding:10px;width:470px;"></div>
+js初始化调用方法
+xyzPicPreview.create({
+	xyzPicPreview:'previewDiv3',//容器div的id
+	//初始化后要立即展示的链接
+	imageUrls:'http://file.duanyi.com.cn/accessory/mydirectory/20150827/201508271713356051997.jpg,http://file.duanyi.com.cn/accessory/cccdirectory/20150901/201509011231248582971.jpg',
+	maxCount:10,//允许展示的最多图片数量
+	imgClick:function(url){//点击图片后的回调
+		alert("自定义imgClick方法弹出图片的url是："+url);
+	}
+});
+//往指定xyzPicPreview中添加一个显示链接
+xyzPicPreview.addPic('previewDiv3','http://file.duanyi.com.cn/accessory/mydirectory/20150827/201508271713356051997.jpg');
+//获取指定xyzPicPreview中所有连接
+xyzPicPreview.getAllPic('previewDiv3');

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>后台</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name='viewport' content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+    <meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT">
+    <!-- Set render engine for 360 browser -->
+    <meta name=renderer content=webkit>
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    
+</head>
+<script>
+    document.write('<script type="text/javascript" src="./xyzCommonFrame/js/mxImport.js?clearCache=' + Math.ceil(Math.random() * 1000) + '" id="mxImportId"><\/script>')
+</script>
+
+<script>
+    //按需定义
+    window.mxImport(['baseJS',
+        'uploader',
+        'cropper',
+        'MaytekF',
+        'cookie',
+        'cookie2',
+        'qrcode'
+    ]);
+</script>
+<body>
+	<a href="index.html">返回主页</a>
+	
+	修改密码
+	<div id="contentDiv">
+	
+		用户名<input type="text" id="username" />
+		旧密码<input type="password" id="password"/>
+		新密码<input type="password" id="newpassword"/>
+		
+		<a href="javascript:;" onclick="submit()">确定</a>
+	</div>
+	
+</body>
+	
+<script>
+	$(document).ready(function () {
+		
+		
+		
+	});
+	
+	function submit(){
+		
+		var username = $('#username').val();
+		var password = $('#password').val();
+		var newpassword = $('#newpassword').val();
+		
+		xyzAjax({
+			url : '../LoginWS/alterPassword.xyz',
+			data : {
+				username : username,
+				oldPassword : $.md5(password).substr(8, 16), //密码前端加密
+				newPassword : $.md5(newpassword).substr(8, 16), //密码前端加密
+			},
+			success : function(data){
+				if(data.status == 1){
+					
+					alert("操作成功!");
+					
+				}else{
+					
+					alert(data.msg);
+					
+				}
+			}
+		});
+	}
+	
+</script>
+	
+</html>

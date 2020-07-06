@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jspdf.js"></script>
+    <script src="js/html2canvas.js"></script>
+    <style type="text/css">
+        .col4 {
+            width: 600px;
+            word-wrap: break-word;
+            word-break: normal;
+        }
+
+        .tb1 {
+            width: 100px;
+            word-wrap: break-word;
+            word-break: normal;
+        }
+
+        .tb2 {
+            width: 160px;
+            word-wrap: break-word;
+            word-break: normal;
+        }
+
+        .tb3 {
+            width: 140px;
+            word-wrap: break-word;
+            word-break: normal;
+        }
+
+        .tb4 {
+            width: 300px;
+            word-wrap: break-word;
+            word-break: normal;
+        }
+    </style>
+</head>
+<body>
+<button onclick="download()">生成</button>
+
+<table id="capture" cellpadding="6" cellspacing="0" style="text-align: center;" border="1">
+    <thead>
+    <tr>
+        <td colspan="5" style="font-size: 18px;">出 行 通 知 单</td>
+    </tr>
+    <tr>
+        <td class="tb1">线路名称</td>
+        <td class="col4" colspan="4">【桂林5天游】程二</td>
+    </tr>
+    <tr>
+        <td class="tb1">去程日期</td>
+        <td class="tb2"></td>
+        <td class="tb3">去程航班/车次</td>
+        <td class="tb4" colspan="2"></td>
+    </tr>
+    <tr>
+        <td class="tb1">返程日期</td>
+        <td class="tb2"></td>
+        <td class="tb3">回程航班/车次</td>
+        <td class="tb4" colspan="2"></td>
+    </tr>
+    <tr>
+        <td class="tb1">接团标志</td>
+        <td class="col4" colspan="4" style="text-align: left;">
+            <span style="color: red;">接团人员持黄色"关东之旅"导游旗温馨接团,地接导游出发前一天电话/短信通知，请保持电话畅通。</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="tb1">应急电话</td>
+        <td class="col4" colspan="4" style="text-align: left;">
+            程洪缘 11111111111
+        </td>
+    </tr>
+    <tr>
+        <td class="tb1">乘机须知</td>
+        <td class="col4" colspan="4" style="text-align: left;">
+            1.请提前至少120分钟抵达机场，办理登机牌。航班起飞前45分钟停止办理登机牌。 <br>
+            2.旅客随身携带液态物品每件不超100毫升。机场方面提醒旅客，在整理行装时，务必根据新规定对行李“挤水分”，以免耽误行程。旅客随身携带的液体药品，必须开具医院处方证明。 <br>
+            3. 禁止随身携带打火机、火柴。电池、充电宝必须随身携带，不允许托运。 <br>
+            4.春秋航空公司的免费行李额较低；您的免费托运行李额为10公斤（婴儿无免费行李额），尺寸不应超过40厘米×60厘米×100厘米，超重部分需支付逾重行李费,每公斤按国家公布的经济舱全票价的1.5%计算。春秋航空公司规定每位旅客带入客舱的非托运行李（包括自理行李和随身携带物品）仅限一件，重量不应超过7公斤，尺寸不应超过20厘米×30厘米×40厘米，超重或超限的，均应办理托运；如您未能配合的，春秋航空公司将有权拒绝运输。
+        </td>
+    </tr>
+    <tr>
+        <td>姓 名</td>
+        <td>年 龄</td>
+        <td>证 件 号</td>
+        <td>手 机 号</td>
+        <td>备 注</td>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr>
+        <td>成都市</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td>按规范</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td>附加</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td>的故事</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+    </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="5">
+            ***请收到通知书后仔细核对以上名单，如有异议尽快通知我社做出相应处理***
+        </td>
+    </tr>
+    <tr>
+        <td colspan="5">
+            详细行程安排
+        </td>
+    </tr>
+    <tr>
+        <td colspan="5"
+            style="word-wrap: break-word; word-break: normal;line-height:17px;font-family: SimSun;font-size:10px;">
+            <table width="673" style="width: 870px;">
+                <tbody>
+                <tr style=";height:31px" class="firstRow">
+                    <td width="655" colspan="8"
+                        style="border-width: 4px 4px 1px; border-style: double double dashed; border-color: rgb(51, 102, 255); border-image: initial; background: rgb(224, 224, 224); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#3366FF">——产品推荐理由——</span></strong>
+                        </p></td>
+                    <td style=";border:none;padding:0 0 0 0" width="18" colspan="2"><br></td>
+                </tr>
+                <tr style=";height:6px">
+                    <td width="655" colspan="8"
+                        style="border-top: none; border-left: 4px double rgb(51, 102, 255); border-bottom: 1px dashed rgb(51, 102, 255); border-right: 4px double rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="margin-left:28px;text-align:left;line-height:28px"><span
+                                style="font-size:16px;font-family:Wingdings;color:#0066FF">²<span
+                                style="font:9px &#39;Times New Roman&#39;">&nbsp; </span></span><span
+                                style="font-size:16px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#0066FF">商务时间航线，拒绝早起晚归红眼航班，2小时直飞大连，只为您尊贵享受！</span>
+                        </p>
+                        <p style="margin-left:28px;text-align:left;line-height:28px"><span
+                                style="font-size:16px;font-family:Wingdings;color:#0066FF">²<span
+                                style="font:9px &#39;Times New Roman&#39;">&nbsp; </span></span><span
+                                style="font-size:16px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#0066FF">大连精华景点全覆盖：莲花山上360°俯视大连全景</span><strong><span
+                                style="font-size:16px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#5F497A">&amp;</span></strong><span
+                                style="font-size:16px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#0066FF">旅顺军港</span><strong><span
+                                style="font-size:16px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#5F497A">&amp;</span></strong><span
+                                style="font-size:16px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#0066FF">醉美东海公园</span><strong><span
+                                style="font-size:16px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#5F497A">&amp;</span></strong><span
+                                style="font-size:16px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#0066FF">有轨电车穿越大连老城区</span><strong><span
+                                style="font-size:   16px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#5F497A">&amp;</span></strong><span
+                                style="font-size:16px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#0066FF">东方威尼斯水城感受异国风情</span><strong><span
+                                style="font-size:   16px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#5F497A">&amp;</span></strong><span
+                                style="font-size:16px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#0066FF">小平岛喂海鸥</span><strong><span
+                                style="font-size:16px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#5F497A">&amp;</span></strong><span
+                                style="font-size:16px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#0066FF">潜艇博物馆巡航体验</span><strong><span
+                                style="font-size:   16px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#5F497A">&amp;</span></strong><span
+                                style="font-size:16px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#0066FF">金石滩十里黄金海岸赶海踏浪+篝火晚会</span><strong><span
+                                style="font-size:16px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#5F497A">&amp;</span></strong><span
+                                style="font-size:16px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#0066FF">感受行走的大连星海湾跨海大桥</span>
+                        </p>
+                        <p style="margin-left:28px;text-align:left;line-height:28px"><span
+                                style="font-size:16px;font-family:Wingdings;color:#171417;letter-spacing:0">²<span
+                                style="font:9px &#39;Times New Roman&#39;">&nbsp; </span></span><span
+                                style="font-size:16px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#0066FF">5</span><span
+                                style="font-size:16px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#0066FF">天4晚不起早贪黑，放慢节奏游大连，升级一晚金石滩主题别墅，给你不一样的体验</span>
+                        </p>
+                        <p style="margin-left:28px;text-align:left;line-height:28px"><span
+                                style="font-size:16px;font-family:Wingdings;color:#0066FF">²<span
+                                style="font:9px &#39;Times New Roman&#39;">&nbsp; </span></span><span
+                                style="font-size:16px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#0066FF">华东人自家团，熟悉的乡音，相似的生活习惯，拒绝全国大散拼品，每团上限25人小包团！</span>
+                        </p>
+                        <p style="margin-left:28px;text-align:left;line-height:28px"><span
+                                style=";font-family:Wingdings;color:#0066FF">²<span
+                                style="font:9px &#39;Times New Roman&#39;">&nbsp; </span></span><span
+                                style="font-size:16px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#0066FF">前30名报名游客，再送价值198元韩式富硒不粘锅一个！！！</span>
+                        </p></td>
+                    <td style=";border:none;padding:0 0 0 0" width="18" colspan="2"><br></td>
+                </tr>
+                <tr style=";height:25px">
+                    <td width="655" colspan="8"
+                        style="border-top: none; border-left: 4px double rgb(51, 102, 255); border-bottom: 1px dashed rgb(51, 102, 255); border-right: 4px double rgb(51, 102, 255); background: rgb(217, 217, 217); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#3366FF">——行程安排——</span></strong>
+                        </p></td>
+                    <td style=";border:none;padding:0 0 0 0" width="18" colspan="2"><br></td>
+                </tr>
+                <tr style=";height:31px">
+                    <td width="66" rowspan="2"
+                        style="border-top: none; border-left: 4px double rgb(51, 102, 255); border-bottom: 1px dashed rgb(51, 102, 255); border-right: 1px dashed rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;">第01天</span></p></td>
+                    <td width="589" colspan="7"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 4px double rgb(51, 102, 255); background: white; padding: 0px 7px;">
+                        <p style="line-height:24px"><strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black;background:white">上海-大连（参考车次：9C8843/08:40-10:40 直飞）</span></strong>
+                        </p>
+                        <p style="text-align:left;line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#3E3E3E;letter-spacing:0;background:white">上海乘机飞往浪漫之都—大连，</span><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#3E3E3E;background:white">开启专属您的大连之旅，<span
+                                style="letter-spacing:   0">抵达后</span></span><span
+                                style=";font-family:   &#39;微软雅黑&#39;,&#39;sans-serif&#39;">接待人员会安排您先到酒店办理入住（凭有效证件并缴纳押金办理入住，押金单保存好），在此期间会为您简单介绍大连概况，交通情况，风俗人情。<span
+                                style="color:black;letter-spacing:0;background:white">今日无团队行程，一切由您随心所欲。您可以尽情自由体验滨城——大连的魅力！无论是白天还是夜晚，您都可以在这座浪漫的北方小城中找到专属于您的精彩。</span><span
+                                style="color:black">出门带好房卡、酒店名片、记好导游联系方式，在大连期间遇到任何问题第一时间联系导游为您解决。</span></span></p>
+                        <p style="text-align:left;line-height:24px;background:white"><strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#0066FF">大连首日攻略，特别向您推荐：</span></strong>
+                        </p>
+                        <p style="text-align:left;line-height:24px;background:white"><strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:fuchsia">➹自由活动小攻略：</span></strong>
+                        </p>
+                        <p style=";margin-bottom:0;text-align:justify;text-justify:   inter-ideograph;line-height:24px;background:   white">
+                            <span style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;">大连最繁华的商业圈有二个，分别是青泥洼商业圈和西安路商业圈，我们预定的酒店都会在这二个商业圈附近，你如果喜欢逛街不防去转转，或者到东港商务区的欧巴广场来一份下午茶，喝着咖啡看着海鸥在海面上飞翔，度过一个惬意的午后，如果您是一个美食爱好者，那就去歹街看看吧，各地小吃，绝对可以满足您的胃,,,,,,</span>
+                        </p>
+                        <p style="text-align:left;line-height:24px;background:white"><strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:fuchsia">➹交通攻略：</span></strong>
+                        </p>
+                        <p style="text-align:left;line-height:24px;background:white"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;">大连的出租车服务比较规范。起步价10元。单价 2元/公里。夜间22点至5点，起步价13元，单价2.4/公里，建议客人软件打车，经济实惠。公交车大都是1元，地铁票价根据路程为2、3、4元不等 </span>
+                        </p></td>
+                    <td style=";border:none;padding:0 0 0 0" width="18" colspan="2"><br></td>
+                </tr>
+                <tr style=";height:17px">
+                    <td width="236" colspan="2"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 1px dashed rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;">住宿：大连</span></p></td>
+                    <td width="197" colspan="3"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 1px dashed rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;">用餐：X</span></p></td>
+                    <td width="156" colspan="2"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 4px double rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;">交通：飞机</span></p></td>
+                    <td style=";border:none;padding:0 0 0 0" width="18" colspan="2"><br></td>
+                </tr>
+                <tr style=";height:31px">
+                    <td width="66" rowspan="2"
+                        style="border-top: none; border-left: 4px double rgb(51, 102, 255); border-bottom: 1px dashed rgb(51, 102, 255); border-right: 1px dashed rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;">第02天</span></p></td>
+                    <td width="589" colspan="7"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 4px double rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="line-height:24px"><strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black;background:white">大连-旅顺（90KM,车程约1小时）-大连</span></strong>
+                        </p>
+                        <p style="text-align:left;line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;">早餐后，酒店集合出发，乘车前<span
+                                style="color:black">往素有“中国半部近代史”之称的</span><strong><span
+                                style="color:#0066FF">【旅顺口风景区】</span></strong><span style="color:black">，</span><strong><span
+                                style="color:#0066FF">【东北卡斯特地貌】</span></strong>（滨海喀斯特地貌，这一点与文明天下的桂林石林是一样的，在北方地区很少有像大连这么大规模的喀斯特地貌。沿着海岸线漫步，脚下踩着诞生于远古的陆地，听着海浪潮起潮落的声音，沧海桑田，往往只是一瞬间。<strong><span
+                                style="color:#0066FF">【肃亲王府+夏洛特烦恼的拍摄地—樱花大道】</span></strong>砖石结构俄式二层楼房建筑 这栋楼房原是俄国人的别墅。日俄战争后归日本人所有，日本军方将这栋楼房辟为肃亲王府。<strong><span
+                                style="color:red">【033号潜艇（换购项目）】</span></strong>我国自行研制建造的第一代国产常规潜艇，编入海军旅顺潜艇部队序列服役20多年，于2006年光荣退役，被命名为“旅顺口”号；<strong><span
+                                style="color:red">【潜艇巡航模拟（换购项目）】</span></strong>国内首个潜艇巡航模拟馆，带您体验到犹如乘坐真实潜艇的种种感受；游览<span
+                                style="color:black">家喻户晓的歌曲《军港之夜》唱响的地方</span><strong><span
+                                style="color:#0066FF">【旅顺军港】</span></strong><span
+                                style="color:#0070C0">，</span>途参观径<strong><span
+                                style="color:#0066FF">【旅顺火车站】【胜利塔】</span></strong>后游览<strong><span
+                                style="color:#0066FF">【白玉山风景区】</span></strong>海拔165米，原名"西官山"，李鸿章视察旅顺口时说，既有黄金，当有白玉。从此西官山更名"白玉山"登上白玉山顶，旅顺口军港及市区风光尽收眼底，是观赏旅顺城市全貌和旅顺军港的最佳地点！根据需求自愿欣赏【旅顺印象（自理280元）】演艺秀，后赴<strong><span
+                                style="color:red">【小平岛喂海鸥（换购项目）】</span></strong>可以与海上吉祥物--海鸥近距离接触，拍照，看它在海水中嬉<span
+                                style="color:black">戏（自理帆船出海260元，魔音双体帆船，体验别样亲海方式）</span>。<strong><span
+                                style="color:red">【感受行走的大连乘车游览大连星海湾跨海大桥（换购项目）】</span></strong><span
+                                style="color:#222222;background:white">为中国首座海上地锚式悬索跨海大桥。体会不一样的大海，行走不一样的跨海大桥，抓取不一样的波光粼粼。</span><span
+                                style="color:black">远眺星海广场与大海的深处！返回市区</span>后游览<strong><span style="color:red">【白云雁水莲花山（换购项目）】</span></strong><span
+                                style="color:blue">（小火车自理100元）</span>莲花山观景台是大连市内离天最近、离海最近、离城最近的一座山峰！是各级领导、中外贵宾视察大连的必到之处。这里可以带您乘坐欧式小火车登上259.6米的莲花山峰 欣赏360°全景大连．它是我国著名的地质学家李四光发现的地质珍迹：莲花状构造．它矗立在海岸之滨，是欣赏大连风光的第一制高点。入住酒店休息&nbsp;&nbsp; </span>
+                        </p></td>
+                    <td style=";border:none;padding:0 0 0 0" width="18" colspan="2"><br></td>
+                </tr>
+                <tr style=";height:11px">
+                    <td width="236" colspan="2"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 1px dashed rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">住宿：大连</span></p>
+                    </td>
+                    <td width="197" colspan="3"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 1px dashed rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">用餐：早、中餐</span></p>
+                    </td>
+                    <td width="156" colspan="2"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 4px double rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">交通：旅游BUS</span></p>
+                    </td>
+                    <td style=";border:none;padding:0 0 0 0" width="18" colspan="2"><br></td>
+                </tr>
+                <tr style=";height:6px">
+                    <td width="66" rowspan="2"
+                        style="border-top: none; border-left: 4px double rgb(51, 102, 255); border-bottom: 1px dashed rgb(51, 102, 255); border-right: 1px dashed rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;">&nbsp;</span></p>
+                        <p style="text-align:center;line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;">&nbsp;</span></p>
+                        <p style="text-align:center;line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;">第03天</span></p></td>
+                    <td width="589" colspan="7"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 4px double rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="line-height:24px"><strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;">大连-金石滩（120KM,<span
+                                style="color:black">车程约1.5小时）</span></span></strong></p>
+                        <p style="line-height:24px"><span style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;">早餐后，酒店集合出发，游览<strong><span
+                                style="color:red">【东海公园（换购项目）】</span></strong><span
+                                style="color:blue">（小交通自理100元）</span>是山峰、森林、碧海、草地等为主要自然景观的海滨公园,7.6公里长的游览路线上有两处精彩景点：一是左右盘旋跨山过岭的十八盘，景观奇特，居高临下，路面似银带飘向海滨，素有“海底大峡谷”之称；二是翻过十八盘之名叫“怪坡”的景点，那里汽车上坡与下坡呈反常状态，妙趣横生。独具特色的十八盘游览路，峰回路转，一步一景。 52米长的怪坡，更给群山碧水增添了神秘的色彩。<strong><span
+                                style="color:#0066FF">【石槽渔村】</span></strong>大连最后一片未被开发海域，干净渔村，处依山傍海，风景秀丽。海岸曲折，岬角海湾较多，岩壁峭岸，礁石嵯峨，峥嵘险峻，景色尤为壮观。<strong><span
+                                style="color:#0066FF">【渔人码头】</span></strong><span style="color:black">文艺小店的聚集处，长长的海岸线边上有各种北美和欧式建筑，藏匿在建筑里的是特色文艺餐厅酒吧。 慢生活，在这里，淋漓尽致，那轻松的氛围你还可以身无分文的在这里享受一段美好的闲暇时光；</span><strong><span
+                                style="color:#0066FF">【虎雕广场】</span></strong><span style="color:black">虎雕广场的六只老虎石雕是全国最大的花岗石雕。他们错落有序地交叠在一起，形态各异，虎头都向着东方，迎风长啸，个个虎虎生威。</span><strong><span
+                                style="color:red">【体验老式有轨电车（换购项目）】</span></strong><span style="color:black">（体验一站地），体验穿梭于这座城市街道中的一种古老而神秘的交通工具-有轨电车，它是城市一道亮丽的风景线；一页历史，一道丽景，跨越百年，再撩你一次。</span><strong><span
+                                style="color:red">午餐品尝特色饺子餐（换购项目）</span></strong><strong><span style="color:#0066FF">【漫步歹街】</span></strong>‘歹’大连方言吃的意思；歹街集美食、观光为一体的特色老街，漫步歹街，仿佛时光回到了民国时期，让您感受年代的变迁，岁月的流逝，时空的穿越。<strong><span
+                                style="color:#0066FF">【<a href="https://baike.so.com/doc/7546796-7820889.html"
+                                                          target="_blank"><span
+                                style="color:#0066FF;text-underline:none">十里黄金海岸</span></a>（海边踏浪）】</span></strong><span
+                                style="color:#333333;background:white">这里避风朝阳，滩上细砂匀布，平缓洁净，海水清澈，波高适宜，弓形滩面被两侧突入海面的岬角抱住，地理环境得天独厚。</span><strong><span
+                                style="color:red">【篝火晚会、卡拉OK（换购项目）】</span></strong>尽情嗨唱，狂欢。今晚入住精心问您安排的<strong><span
+                                style="color:red">【主题别墅（换购项目）】</span></strong></span></p>
+                        <p style="line-height:24px"><strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:red">今日惊喜：特色饺子餐，尝尝当地手工水饺，新鲜食材，配上可口小菜</span></strong>
+                        </p></td>
+                    <td style=";border:none;padding:0 0 0 0" width="18" colspan="2"><br></td>
+                </tr>
+                <tr style=";height:32px">
+                    <td width="236" colspan="2"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 1px dashed rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">住宿：大连</span></p>
+                    </td>
+                    <td width="197" colspan="3"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 1px dashed rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">用餐：早、中餐</span></p>
+                    </td>
+                    <td width="156" colspan="2"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 4px double rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">交通：旅游BUS</span></p>
+                    </td>
+                    <td style=";border:none;padding:0 0 0 0" width="18" colspan="2"><br></td>
+                </tr>
+                <tr style=";height:6px">
+                    <td width="66" rowspan="2"
+                        style="border-top: none; border-left: 4px double rgb(51, 102, 255); border-bottom: 1px dashed rgb(51, 102, 255); border-right: 1px dashed rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">第04天</span></p>
+                    </td>
+                    <td width="589" colspan="7"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 4px double rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="line-height:24px"><strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">金石滩-大连</span></strong><strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;">（120KM,<span
+                                style="color:black">车程约1.5小时）</span></span></strong></p>
+                        <p style="line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;">早餐后，<span
+                                style="color:#333333;background:white">乘车赴国家5A级风景名胜区---</span><strong><span
+                                style="color:#0066FF">【金石滩国家旅游渡假区】</span></strong>金石滩三面环海，冬暖夏凉，气候宜人，延绵30多公里长的海岸线，凝聚了3-9亿年地质奇观，被称为“凝固的动物世界”、“天然地质博物馆”、有“神力雕塑公园”之美誉。途经开发区、保税区、双D岗、<strong><span
+                                style="color:#0066FF">【一帆风顺广场】</span></strong>金石滩一帆风顺广场，是进入金石滩旅游度假区的“大门”。在广场的正中有一艘仿古船，他的寓意也有祝福游客朋友们在今后的生活和工作中一帆风顺。前往<strong><span
+                                style="color:red">【高尔夫俱乐部体验贵族运动--高尔夫球（仅限每人3球 换购项目）】</span></strong><span
+                                style="color:#333333;background:white">（游玩时间约为20分钟）</span><strong><span
+                                style="color:#0066FF">【金石玫瑰园】</span></strong>观花一样的地质园区、感受浪漫与神奇并存,大自然的鬼斧神工之作<strong><span
+                                style="color:red">【心愿海（换购项目）】</span></strong>自古，漂流瓶是人们穿越广阔大海进行交流的一种有趣的传播方式，投进大海的漂流瓶不知道将漂向何方，被何人捡到，充满着未知的神秘气息。踩在柔软的沙滩上仰望蓝天白云，海风微微吹过耳旁撩起丝丝秀发，在五彩纸上写上自己心中愿望。在起伏的海浪中，承载着美好愿望的漂流瓶随波逐浪去远航！<strong><span
+                                style="color:red">午餐品尝特色海鲜一铲子（换购项目）</span></strong><strong><span style="color:#0066FF">【童牛岭】</span></strong>感受童牛飞天、中国最大的九龙壁（高50米、宽500米，九条大恐龙）、海滨浴场的巨大雕塑，壁画堪称中国一绝。山岭郁郁葱葱，连绵起伏。山顶上的飞碟壮观雄伟（不含飞碟登顶），可以看到黄海和渤海的不同景色。游览<strong><span
+                                style="color:#0066FF">【俄罗斯风情一条街】</span></strong>（约60分钟）<span style="background:white">俄罗斯风情一条街地处繁华的胜利桥西北，已有百年历史。是全国第一条具有俄罗斯十九、二十世纪风格的俄罗斯风情街。现成为大连最出名的小商品批发步行街。后游览</span><strong><span
+                                style="color:red">【夜幕下的大连（换购项目）】</span></strong>：①<strong><span style="color:#0066FF">【东港CBD商业区】</span></strong>东港是目前大连楼市最热门的区域，也是最特别的区域。被誉为"钻石海湾"，是延伸大连百年历史繁华的最具升值空间的钻石地段，是未来大连楼市真正的"制高点"。②<strong><span
+                                style="color:#0066FF">【东方威尼斯水城】</span></strong><span
+                                style="color:#222222;background:white">沿着水巷漫步，别有一番不染纤尘的异域风情，当咸涩的海风吹拂，令人感觉一抹清新舒爽。由木桥石桥联接两岸的风情街上，充满慵懒气氛的各色咖啡馆、独特的工艺品小铺林立，水道中摇曳着首尾翘起的“贡多拉”，各种情调都在这里完的融合着，吸引游人，纷至沓来的是静待一场落日，黄昏余晖把 &nbsp; 水城 熔炼的金光鳞鳞，熠熠生辉，这里的一切都隐于一片橙色的温暖中，夜幕降临，灯火阑珊时，在泛黄的灯光下，体会独属大连的时尚与浪漫，更是别有风情，韵味悠长，会让你忘记时间。</span></span><span
+                                style=";font-family:&#39;Calibri&#39;,&#39;sans-serif&#39;;color:#222222;background:white">③</span><strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#0066FF">【星海广场】</span></strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;">亚洲最大的城市广场，它象征着宽广，包容，平静，和谐。在广场的旁边有个雕塑像翻开的一本大书，它的名字叫“百年城雕”，为大连建市100周年所建的,象征着大连风风雨雨走过100年的沧桑，向着更美好的未来前，④车游<strong><span
+                                style="color:#0066FF">【中山广场、人民广场】</span></strong><span
+                                style="color:#222222;background:white">领略大连广场文化，入住酒店休息</span></span></p>
+                        <p style="line-height:24px"><strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:red;background:white">今日惊喜：品尝</span></strong><strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:red">大连特色海鲜一铲子餐，大连当地特色美食</span></strong>
+                        </p></td>
+                    <td style=";border:none;padding:0 0 0 0" width="18" colspan="2"><br></td>
+                </tr>
+                <tr style=";height:31px">
+                    <td width="236" colspan="2"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 1px dashed rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">住宿：大连</span></p>
+                    </td>
+                    <td width="197" colspan="3"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 1px dashed rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">用餐：早、中餐</span></p>
+                    </td>
+                    <td width="156" colspan="2"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 4px double rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">交通：旅游BUS</span></p>
+                    </td>
+                    <td style=";border:none;padding:0 0 0 0" width="18" colspan="2"><br></td>
+                </tr>
+                <tr style=";height:138px">
+                    <td width="66" rowspan="2"
+                        style="border-top: none; border-left: 4px double rgb(51, 102, 255); border-bottom: 1px dashed rgb(51, 102, 255); border-right: 1px dashed rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">第05天</span></p>
+                    </td>
+                    <td width="589" colspan="7"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 4px double rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="line-height:24px"><strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;">大连-上海（参考航班：9C8592/17:50-20:10） &nbsp; </span></strong>
+                        </p>
+                        <p style="line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#222222;background:white">早睡到自然醒，全天自由活动（不含用车及导游服务&nbsp; 酒店需12：00退房，延住客人费用自理）根据返程航班时间安排送机服务</span>
+                        </p>
+                        <p style="line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#222222;background:white">自由行推荐攻略：</span>
+                        </p>
+                        <p style="line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#222222;background:white">推荐一：【大连圣亚海洋公园1日游】</span>
+                        </p>
+                        <p style="line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#222222;background:white">推荐二：【大连发现王国主题乐园1日游】</span>
+                        </p>
+                        <p style="line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#222222;background:white">推荐三：【大连市内自由活动+逛当地海鲜市场采购】</span>
+                        </p>
+                        <p style="line-height:24px"><strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#0066CC">一段简简单单的旅行，不用多远，也不用多久，一路欢歌笑语。出去走走停停，看看风景。您在路上，我们也在路上，还好有您的陪伴。我们不断探索，不断前行。给您N次方个理由，让您爱上我。愿岁月静好，您也安好。浪漫之城何处告别？傍晚，我在大连送别你~希望我们能给您留下美好的回忆，期待与您下次的不期而遇~</span></strong>
+                        </p></td>
+                    <td style=";border:none;padding:0 0 0 0" width="18" colspan="2"><br></td>
+                </tr>
+                <tr style=";height:31px">
+                    <td width="236" colspan="2"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 1px dashed rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">住宿：——</span></p>
+                    </td>
+                    <td width="197" colspan="3"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 1px dashed rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">用餐：早餐</span></p>
+                    </td>
+                    <td width="156" colspan="2"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 4px double rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">交通：旅游BUS送站/飞机</span>
+                        </p></td>
+                    <td style=";border:none;padding:0 0 0 0" width="18" colspan="2"><br></td>
+                </tr>
+                <tr style=";height:31px">
+                    <td width="655" colspan="8"
+                        style="border-top: none; border-left: 4px double rgb(51, 102, 255); border-bottom: 1px dashed rgb(51, 102, 255); border-right: 4px double rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><span
+                                style="font-size:19px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:red">前30名报名游客，再送价值198元</span><span
+                                style="font-size:19px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:red">韩式富硒不粘锅一个！！！</span>
+                        </p></td>
+                    <td style=";border:none;border-bottom:dashed #3366FF 1px" width="18" colspan="2"><br></td>
+                </tr>
+                <tr style=";height:38px">
+                    <td width="373" colspan="4"
+                        style="border-top: none; border-left: 4px double rgb(51, 102, 255); border-bottom: 1px dashed rgb(51, 102, 255); border-right: 1px dashed rgb(51, 102, 255); background: rgb(31, 73, 125); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><strong><span
+                                style="font-size:16px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:white">开班日期</span></strong>
+                        </p></td>
+                    <td width="87"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 1px dashed rgb(51, 102, 255); background: rgb(31, 73, 125); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><strong><span
+                                style="font-size:16px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:white">成人价</span></strong>
+                        </p></td>
+                    <td width="105" colspan="2"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 1px dashed rgb(51, 102, 255); background: rgb(31, 73, 125); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><strong><span
+                                style="font-size:16px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:white">+</span></strong><strong><span
+                                style="font-size:16px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:white">换购</span></strong>
+                        </p></td>
+                    <td width="92" colspan="2"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 1px dashed rgb(51, 102, 255); background: rgb(31, 73, 125); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><strong><span
+                                style="font-size:16px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:white">儿童价</span></strong>
+                        </p></td>
+                    <td width="16"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 4px double rgb(51, 102, 255); background: rgb(31, 73, 125); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><strong><span
+                                style="font-size:16px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:white">房差</span></strong>
+                        </p></td>
+                </tr>
+                <tr style=";height:38px">
+                    <td width="373" colspan="4"
+                        style="border-top: none; border-left: 4px double rgb(51, 102, 255); border-bottom: 1px dashed rgb(51, 102, 255); border-right: 1px dashed rgb(51, 102, 255); background: rgb(199, 218, 241); padding: 0px 7px;">
+                        <p style="text-align:left;line-height:24px"><strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#0070C0">9</span></strong><strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#0070C0">月3、5、7、10、12、14、17、19、21、24、26</span></strong>
+                        </p></td>
+                    <td width="87"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 1px dashed rgb(51, 102, 255); background: rgb(199, 218, 241); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#0070C0">599</span></strong><strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#0070C0">元/人</span></strong>
+                        </p></td>
+                    <td width="105" colspan="2"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 1px dashed rgb(51, 102, 255); background: rgb(199, 218, 241); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#0070C0">+880</span></strong><strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#0070C0">元/人</span></strong>
+                        </p></td>
+                    <td width="92" colspan="2"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 1px dashed rgb(51, 102, 255); background: rgb(199, 218, 241); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#0070C0">599</span></strong><strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#0070C0">元/人</span></strong>
+                        </p></td>
+                    <td width="16"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 4px double rgb(51, 102, 255); background: rgb(199, 218, 241); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#0070C0">400</span></strong>
+                        </p></td>
+                </tr>
+                <tr style=";height:38px">
+                    <td width="373" colspan="4"
+                        style="border-top: none; border-left: 4px double rgb(51, 102, 255); border-bottom: 1px dashed rgb(51, 102, 255); border-right: 1px dashed rgb(51, 102, 255); background: rgb(199, 218, 241); padding: 0px 7px;">
+                        <p style="text-align:left;line-height:24px"><strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#0070C0">10</span></strong><strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#0070C0">月5、8、10、12、15、17、19</span></strong>
+                        </p></td>
+                    <td width="87"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 1px dashed rgb(51, 102, 255); background: rgb(199, 218, 241); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#0070C0">499</span></strong><strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#0070C0">元/人</span></strong>
+                        </p></td>
+                    <td width="105" colspan="2"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 1px dashed rgb(51, 102, 255); background: rgb(199, 218, 241); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#0070C0">+880</span></strong><strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#0070C0">元/人</span></strong>
+                        </p></td>
+                    <td width="92" colspan="2"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 1px dashed rgb(51, 102, 255); background: rgb(199, 218, 241); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#0070C0">499</span></strong><strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#0070C0">元/人</span></strong>
+                        </p></td>
+                    <td width="16"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 4px double rgb(51, 102, 255); background: rgb(199, 218, 241); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#0070C0">400</span></strong>
+                        </p></td>
+                </tr>
+                <tr style=";height:31px">
+                    <td width="655" colspan="8"
+                        style="border-top: none; border-left: 4px double rgb(51, 102, 255); border-bottom: 1px dashed rgb(51, 102, 255); border-right: 4px double rgb(51, 102, 255); background: rgb(220, 230, 242); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:29px"><strong><span
+                                style="font-size:19px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#0070C0">***5</span></strong><strong><span
+                                style="font-size:19px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#0070C0">岁以下小童换购费用减半，5岁以上儿童按成人收费***</span></strong>
+                        </p></td>
+                    <td style=";border:none;padding:0 0 0 0" width="18" colspan="2"><br></td>
+                </tr>
+                <tr style=";height:31px">
+                    <td width="655" colspan="8"
+                        style="border-top: none; border-left: 4px double rgb(51, 102, 255); border-bottom: 1px dashed rgb(51, 102, 255); border-right: 4px double rgb(51, 102, 255); background: rgb(224, 224, 224); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#3366FF">——接待标准——</span></strong>
+                        </p></td>
+                    <td style=";border:none;padding:0 0 0 0" width="18" colspan="2"><br></td>
+                </tr>
+                <tr style=";height:31px">
+                    <td width="89" colspan="2"
+                        style="border-top: none; border-left: 4px double rgb(51, 102, 255); border-bottom: 1px dashed rgb(51, 102, 255); border-right: 1px dashed rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">大交通</span></p></td>
+                    <td width="565" colspan="6"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 4px double rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style=";margin-bottom:0;text-align:justify;text-justify:   inter-ideograph;line-height:24px;background:   white">
+                            <span style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black;letter-spacing:1px;background:white">上海浦东-大连，大连-上海浦东往返机票含税</span><span
+                                style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">含7KG手提行李（尺寸要求：20厘米*30厘米*40厘米）+10KG托运行李，超重或超限需补足相应托运费用；切位航班一经确认不得退改签，如有变化全损（不可更改姓名或提供名单错误），请报名时仔细核对客人信息</span>
+                        </p>
+                        <p style=";margin-bottom:0;text-align:justify;text-justify:   inter-ideograph;line-height:24px;background:   white">
+                            <span style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">【参考航班（准确航班及起飞时间以出团通知书为准）】</span>
+                        </p>
+                        <p style=";margin-bottom:0;text-align:justify;text-justify:   inter-ideograph;line-height:24px;background:   white">
+                            <span style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">去程：9C8843/08：40-10：40&nbsp;&nbsp; 回程：9C8592/17：50-20：10</span>
+                        </p></td>
+                    <td style=";border:none;padding:0 0 0 0" width="18" colspan="2"><br></td>
+                </tr>
+                <tr style=";height:31px">
+                    <td width="89" colspan="2"
+                        style="border-top: none; border-left: 4px double rgb(51, 102, 255); border-bottom: 1px dashed rgb(51, 102, 255); border-right: 1px dashed rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">住&nbsp; &nbsp; 宿</span>
+                        </p></td>
+                    <td width="565" colspan="6"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 4px double rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">全程入住4晚酒店双标间（东北</span><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">非一线发达城市，接待能力有限，我社安排当地同级标准中较好酒店，游客报名前可根据我社提供参考酒店名称提前做了解），我社按2人入住1间房核算，如出现单男单女，尽量安排该客人与其他同性别团友拼房；如不愿拼房或未能拼房，请补齐单房差以享用单人房间。</span>
+                        </p>
+                        <p style="line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:red">参考酒店：大&nbsp; 连：世达宾馆、新雅酒店、速八酒店、华驿酒店或同级*3晚</span>
+                        </p>
+                        <p style="line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:red">金石滩：碧桂坊主题度假酒店*1晚</span>
+                        </p></td>
+                    <td style=";border:none;padding:0 0 0 0" width="18" colspan="2"><br></td>
+                </tr>
+                <tr style=";height:31px">
+                    <td width="89" colspan="2"
+                        style="border-top: none; border-left: 4px double rgb(51, 102, 255); border-bottom: 1px dashed rgb(51, 102, 255); border-right: 1px dashed rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">用&nbsp; &nbsp; 餐</span>
+                        </p></td>
+                    <td width="565" colspan="6"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 4px double rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="margin-bottom:0;margin-bottom:0;line-height:24px"><span
+                                style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">全程含餐3正4早（其中2餐为换购项目，正餐8菜1汤1主食，十人一桌，人数增减时，菜量相应增减，但维持餐标不变，如因自身原因放弃用餐，则餐费不退；8人以下退相应餐标费用，儿童用餐同成人</span>
+                        </p></td>
+                    <td style=";border:none;padding:0 0 0 0" width="18" colspan="2"><br></td>
+                </tr>
+                <tr style=";height:31px">
+                    <td width="89" colspan="2"
+                        style="border-top: none; border-left: 4px double rgb(51, 102, 255); border-bottom: 1px dashed rgb(51, 102, 255); border-right: 1px dashed rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">旅游车</span></p></td>
+                    <td width="565" colspan="6"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 4px double rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="margin-bottom:0;margin-bottom:0;line-height:24px"><span
+                                style="font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">空调旅游车(根据参团人数安排具体车型，确保一人一位) </span>
+                        </p></td>
+                    <td style=";border:none;padding:0 0 0 0" width="18" colspan="2"><br></td>
+                </tr>
+                <tr style=";height:31px">
+                    <td width="89" colspan="2"
+                        style="border-top: none; border-left: 4px double rgb(51, 102, 255); border-bottom: 1px dashed rgb(51, 102, 255); border-right: 1px dashed rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">门&nbsp; &nbsp; 票</span>
+                        </p></td>
+                    <td width="565" colspan="6"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 4px double rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">包含行程中所标注景点第一门票（景区小交通需自理）</span>
+                        </p>
+                        <p style="margin-right:10px;text-align:left;line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:red">【温馨提示】该产品报价为综合优惠价格，持老年证、残疾证、军官证、导游证、记者证、教师证等优惠证件不能减免门票费用</span>
+                        </p></td>
+                    <td style=";border:none;padding:0 0 0 0" width="18" colspan="2"><br></td>
+                </tr>
+                <tr style=";height:31px">
+                    <td width="89" colspan="2"
+                        style="border-top: none; border-left: 4px double rgb(51, 102, 255); border-bottom: 1px dashed rgb(51, 102, 255); border-right: 1px dashed rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">导&nbsp; 服</span>
+                        </p></td>
+                    <td width="565" colspan="6"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 4px double rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">当地优秀向导服务；</span>
+                        </p></td>
+                    <td style=";border:none;padding:0 0 0 0" width="18" colspan="2"><br></td>
+                </tr>
+                <tr style=";height:31px">
+                    <td width="89" colspan="2"
+                        style="border-top: none; border-left: 4px double rgb(51, 102, 255); border-bottom: 1px dashed rgb(51, 102, 255); border-right: 1px dashed rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">儿童包含</span></p>
+                    </td>
+                    <td width="565" colspan="6"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 4px double rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">仅含往返机票、车位、导服；如产生景点门票需自理；</span>
+                        </p></td>
+                    <td style=";border:none;padding:0 0 0 0" width="18" colspan="2"><br></td>
+                </tr>
+                <tr style=";height:31px">
+                    <td width="89" colspan="2"
+                        style="border-top: none; border-left: 4px double rgb(51, 102, 255); border-bottom: 1px dashed rgb(51, 102, 255); border-right: 1px dashed rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">换购项目</span></p>
+                    </td>
+                    <td width="565" colspan="6"
+                        style="border-top: none; border-left: none; border-bottom: 1px dashed rgb(51, 102, 255); border-right: 4px double rgb(51, 102, 255); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><strong><span
+                                style="font-size:19px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:red;background:yellow;background:yellow">十项换购海滨娱乐明细</span></strong>
+                        </p>
+                        <p style="text-align:center;line-height:24px"><strong><span
+                                style="font-size:19px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:red;background:yellow;background:yellow">（报名时同团费一同支付，换购不含景区小交通200元/人）</span></strong>
+                        </p>
+                        景点名称1.大连金石滩主题别墅一晚+篝火晚会+卡拉OK，嗨唱狂欢2.大连特色海鲜一铲子餐，品尝大连当地特色美食！3.东北饺子自助餐，上车饺子，尝尝当地手工水饺，新鲜食材，配上可口小菜！4.033号潜艇+巡航模拟体验，国内唯一开放式可参观潜艇，揭开海底杀手的神秘面纱！5.小平岛喂海鸥+醉美公园东海公园+白云雁水莲花山（景交自理）6.体验大连老式叮叮当当有轨电车，穿梭百年大连！7.心愿海祈愿，向大海诉说心中美好愿望，在起伏的海浪中，承载着美好愿望的漂流瓶随波逐浪去远航！8.夜幕下的大连：东港CBD商业区+东方威尼斯水城+星海广场+车游中山、人民广场9.金石滩高尔夫俱乐部体验贵族运动--高尔夫球（每人试打3球）10.感受行走的大连：乘车游览大连星海湾跨海大桥
+                        <p style="line-height:115%"><br></p></td>
+                    <td style=";border:none;padding:0 0 0 0" width="18" colspan="2"><br></td>
+                </tr>
+                <tr style=";height:31px">
+                    <td width="655" colspan="8"
+                        style="border-top: none; border-left: 4px double rgb(51, 102, 255); border-bottom: 1px dashed rgb(51, 102, 255); border-right: 4px double rgb(51, 102, 255); background: rgb(224, 224, 224); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#3366FF">——费用不含——</span></strong>
+                        </p></td>
+                    <td style=";border:none;padding:0 0 0 0" width="18" colspan="2"><br></td>
+                </tr>
+                <tr style=";height:6px">
+                    <td width="655" colspan="8"
+                        style="border-top: none; border-left: 4px double rgb(51, 102, 255); border-bottom: 1px dashed rgb(51, 102, 255); border-right: 4px double rgb(51, 102, 255); padding: 0px 7px;">
+                        <pre style="text-align:justify;text-justify:inter-ideograph;line-height:24px">1.单房差2.景区小交通&nbsp;3.因交通延阻、罢工、天气、飞机机器故障、航班取消或更改时间等不可抗力原因所引致的额外费用。&nbsp;4.酒店内洗衣、理发、电话、传真、收费电视、饮品、烟酒等个人消费。&nbsp;5.旅游人身意外保险（强烈建议游客自行购买）</pre>
+                    </td>
+                    <td style=";border:none;padding:0 0 0 0" width="18" colspan="2"><br></td>
+                </tr>
+                <tr style=";height:33px">
+                    <td width="655" colspan="8"
+                        style="border-top: none; border-left: 4px double rgb(51, 102, 255); border-bottom: 1px dashed rgb(51, 102, 255); border-right: 4px double rgb(51, 102, 255); background: rgb(224, 224, 224); padding: 0px 7px;">
+                        <p style="text-align:center;line-height:24px"><strong><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:#3366FF">——出行须知——</span></strong>
+                        </p></td>
+                    <td style=";border:none;padding:0 0 0 0" width="18" colspan="2"><br></td>
+                </tr>
+                <tr style=";height:31px">
+                    <td width="655" colspan="8"
+                        style="border-right: 4px double rgb(51, 102, 255); border-bottom: 4px double rgb(51, 102, 255); border-left: 4px double rgb(51, 102, 255); border-image: initial; border-top: none; padding: 0px 7px;">
+                        <p style=";margin-bottom:0;text-align:justify;text-justify:   inter-ideograph;line-height:24px">
+                            <span style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">一、报名须知：</span>
+                        </p>
+                        <p style=";margin-bottom:0;text-align:justify;text-justify:   inter-ideograph;line-height:24px">
+                            <span style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">请仔细阅读本行程，根据自身条件选择适合自己的旅游线路，旅行社为非专业健康医疗机构，无法判定旅游者的身体健康情况是否适合参加本次旅游活动，因自身疾病引起的伤亡，由旅游者自行承担责任，旅行社已尽到告知义务，不承担任何责任。</span>
+                        </p>
+                        <p style=";margin-bottom:0;text-align:justify;text-justify:   inter-ideograph;text-indent:0;line-height:24px">
+                            <span style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;">二、</span><span
+                                style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">团队须知：</span>
+                        </p>
+                        <p style=";margin-bottom:0;text-align:justify;text-justify:   inter-ideograph;text-indent:0;line-height:24px">
+                            <span style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">（1）</span><span
+                                style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;">歹街<span
+                                style="color:black">为大连网红小吃街，整条街不是很长，以小吃为主，小型门店较多，请选择干净卫生店面。</span></span></p>
+                        <p style=";margin-bottom:0;text-align:justify;text-justify:   inter-ideograph;text-indent:0;line-height:24px">
+                            <span style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">（2）</span><span
+                                style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">俄罗斯风情街属于俄式商业街，里面小商小贩较多，路边产品非买勿动！</span>
+                        </p>
+                        <p style=";margin-bottom:0;text-align:justify;text-justify:   inter-ideograph;text-indent:0;line-height:24px">
+                            <span style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">（3）</span><span
+                                style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">大连东北菜均属北方用餐口味较重，以海鲜为主，在不确定新鲜程度及其有损自身健康状况的条件下，请谨慎进食。</span>
+                        </p>
+                        <p style=";margin-bottom:0;text-align:justify;text-justify:   inter-ideograph;text-indent:0;line-height:24px">
+                            <span style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">（4）</span><span
+                                style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">如遇人力不可抗拒因素（台风、暴雨、检修等）或政策性调整导致无法游览的景点和项目，我社有权取消或更换为其它等价景点或项目,赠送景点和项目费用不退，并有权将景点及住宿顺序做相应调整。</span>
+                        </p>
+                        <p style=";margin-bottom:0;text-align:justify;text-justify:   inter-ideograph;text-indent:0;line-height:24px">
+                            <span style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;">（5）</span><span
+                                style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">此线路为半自由行网红线路，所有打卡店均属建议推荐，不作为旅行社行程必去景点，向导会根据游客需求告知所有店面具体位置，可根据自己需求自行游览，网红地附近也有其余网红店面，如需了解可询</span><span
+                                style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;">问当团向导。</span></p>
+                        <p style=";margin-bottom:0;text-align:justify;text-justify:   inter-ideograph;text-indent:0;line-height:24px">
+                            <span style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;">（6）</span><span
+                                style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;">夜间或自由活动期间宜结伴同行并告知导游，记好导游手机号备用，注意人身和财物安全。贵重物品可寄存在酒店前台保险柜，下榻的酒店的名称位置也要记牢，不要随便相信陌生人，特别是黑车、夜总会等，出现任何问题与旅行社无关，切记天下没有免费的午餐。</span>
+                        </p>
+                        <p style=";margin-bottom:0;text-align:justify;text-justify:   inter-ideograph;text-indent:0;line-height:24px">
+                            <span style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">（7）</span><span
+                                style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;">文明旅游、文明出行，自觉爱护景区的花草树木和文物古迹，不随意在景区、古迹上乱涂乱画、不乱丢垃圾、尊重当地少数民族风俗等。很多景区和酒店周边有小摊小贩，如无意购买请不要与其讲价还价，一旦讲好价格不购买的话容易产生矛盾。出游请保持平常的心态，遇事切勿急躁，大家互相体谅、互相帮助。</span>
+                        </p>
+                        <p style=";margin-bottom:0;text-align:justify;text-justify:   inter-ideograph;text-indent:0;line-height:24px">
+                            <span style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">（8）</span><span
+                                style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">团队游览中不允许擅自离团（自由活动除外），由此造成未参加行程内景点、用餐、房、车等费用不退，旅行社亦不承担游客离团时发生意外的责任。</span>
+                        </p>
+                        <p style=";margin-bottom:0;text-align:justify;text-justify:   inter-ideograph;text-indent:0;line-height:24px">
+                            <span style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">（9）</span><span
+                                style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">为丰富游客娱乐活动及满足不同旅游者的需求，在游览过程中有更好的体验供您参考，请根据自身情况自愿选择，不强制参加；</span>
+                        </p>
+                        <p style=";margin-bottom:0;text-align:justify;text-justify:   inter-ideograph;text-indent:0;line-height:24px">
+                            <span style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">（10）</span><span
+                                style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">行程目的地非一线发达城市，接待能力有限，酒店星级评定标准也比国内低，所有酒店设施软件与硬件均不能以大城市的眼光去衡量，尤其是旅游旺季的时候，热水、用餐等服务均会有不尽人意的地方，敬请谅解。</span>
+                        </p>
+                        <p style=";margin-bottom:0;text-align:justify;text-justify:   inter-ideograph;text-indent:0;line-height:24px">
+                            <span style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">（11）</span><span
+                                style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">旅游者因自身原因，在旅游行程中需中途离团，须与地接导游签署书面《离团申请书》，经报名组团社确认认可后方可离团；离团后所有的安全责任由旅游者自负；旅游者在旅游行程中自行离团属违约行为，我社将默认为自动放弃所有行程，不承担任何风险后果。</span>
+                        </p>
+                        <p style=";margin-bottom:0;text-align:justify;text-justify:   inter-ideograph;text-indent:0;line-height:24px">
+                            <span style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">（12）</span><span
+                                style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">出游过程中，如产生退费情况，以退费项目旅行社折扣价为依据，均不以挂牌价为准。</span>
+                        </p>
+                        <p style=";margin-bottom:0;text-align:justify;text-justify:   inter-ideograph;line-height:24px">
+                            <span style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">四、餐饮须知：</span>
+                        </p>
+                        <p style=";margin-bottom:0;line-height:24px;background:white"><span
+                                style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">团队正餐为八菜一汤、十人一桌，不含酒水，有些景区及路途中的餐饮因客观原因或许不尽人意，还请体谅，早餐为酒店包含，不吃不退。在旅游地购买食物需注意商品质量，发现食物不卫生或有异味变质的情况，切勿食用。</span>
+                        </p>
+                        <p style=";margin-bottom:0;line-height:24px;background:white"><span
+                                style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">1.&nbsp;</span><span
+                                style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">外出旅游，旅游者应注意身体健康，切勿吃生食、生海鲜、未剥皮的水果，不可光顾路边无牌照摊档，忌暴饮暴食，应多喝开水，多吃蔬菜水果，少抽烟，少喝酒，因私自食用不洁食品和海鲜引起的肠胃疾病旅行社不承担责任。2.为防止旅途中水土不服，旅游者应自备一些常用药品以备不时之需，切勿随意服用他人提供的药品</span>
+                        </p>
+                        <p style=";margin-bottom:0;line-height:24px;background:white"><span
+                                style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">3.</span><span
+                                style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">如对饮食有特殊要求，请在报名时告知旅行社并提前与导游说明，以便导游再条件允许的情况下更好的给您安排饮食。</span>
+                        </p>
+                        <p style=";margin-bottom:0;line-height:24px;background:white"><span
+                                style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">4.</span><span
+                                style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">特别提示：旅行社不提倡、不安排饮酒，并对游客因饮酒发生的意外不承担责任；若出现酗酒闹事、扰乱社会秩序、侵害他人权益以及造成自身损害的一切责任由肇事者承担。</span>
+                        </p>
+                        <p style=";margin-bottom:0;text-align:justify;text-justify:   inter-ideograph;line-height:24px">
+                            <span style="font-size:14px;font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">六、意见反馈单：</span>
+                        </p>
+                        <p style="margin-top:0;margin-right:10px;margin-bottom:0;margin-left:24px;margin-bottom:0;text-align:left;line-height:24px">
+                            <span style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">4、 </span><span
+                                style=";font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:black">请客人务必真实的填写导游质量服务跟踪表，此表为维护权益的凭证，公司处理事务均以意见表内容为依据，不接受与意见表相违背的内容反映，谢谢理解与配合；游过程中，客人如有任何对接待不满意的地方请及时与我公司质检及地接负责人员联旅络、反映，以便公司调查核实后及时予以更改及调整，还客人一个舒适满意的旅程，请切勿旅程静言，回程后秋后算账，于事无补。</span>
+                        </p></td>
+                    <td style=";border:none;padding:0 0 0 0" width="18" colspan="2"><br></td>
+                </tr>
+                </tbody>
+            </table>
+            <p><br></p>
+        </td>
+    </tr>
+    </tfoot>
+</table>
+</body>
+<script>
+
+    function download() {
+        var element = document.querySelector("#capture");    // 这个dom元素是要导出pdf的div容器
+        var w = element.offsetHeight;    // 获得该容器的宽
+        var h = element.offsetWidth;    // 获得该容器的高
+        var offsetTop = element.clientHeight;    // 获得该容器到文档顶部的距离
+        var offsetLeft = element.clientLeft;    // 获得该容器到文档最左的距离
+        var canvas = document.createElement("canvas");
+        var abs = 0;
+        var win_i = document.querySelector("body").offsetWidth;    // 获得当前可视窗口的宽度（不包含滚动条）
+        var win_o = window.innerWidth;    // 获得当前窗口的宽度（包含滚动条）
+        if (win_o > win_i) {
+            abs = (win_o - win_i) / 2;    // 获得滚动条长度的一半
+        }
+        canvas.width = w * 1;    // 将画布宽&&高放大两倍
+        canvas.height = h * 1;
+        var context = canvas.getContext("2d");
+        context.mozImageSmoothingEnabled = false;
+        context.webkitImageSmoothingEnabled = false;
+        context.msImageSmoothingEnabled = false;
+        context.imageSmoothingEnabled = false;
+        context.scale(1, 1);
+        context.translate(-offsetLeft - abs, -offsetTop);
+        // 这里默认横向没有滚动条的情况，因为offset.left(),有无滚动条的时候存在差值，因此
+        // translate的时候，要把这个差值去掉
+        html2canvas(element).then(function (canvas) {
+            var contentWidth = canvas.width;
+            var contentHeight = canvas.height;
+            //一页pdf显示html页面生成的canvas高度;
+            var pageHeight = contentWidth / 592.28 * 841.89;
+            //未生成pdf的html页面高度
+            var leftHeight = contentHeight;
+            //页面偏移
+            var position = 0;
+            //a4纸的尺寸[595.28,841.89]，html页面生成的canvas在pdf中图片的宽高
+            var imgWidth = 595.28;
+            var imgHeight = 592.28 / contentWidth * contentHeight;
+
+            var pageData = canvas.toDataURL('image/jpeg', 1.0);
+
+            var pdf = new jsPDF('', 'pt', 'a4');
+
+            //有两个高度需要区分，一个是html页面的实际高度，和生成pdf的页面高度(841.89)
+            //当内容未超过pdf一页显示的范围，无需分页
+            if (leftHeight < pageHeight) {
+                pdf.addImage(pageData, 'JPEG', 0, 0, imgWidth, imgHeight);
+            } else {    // 分页
+                while (leftHeight > 0) {
+                    pdf.addImage(pageData, 'JPEG', 0, position, imgWidth, imgHeight)
+                    leftHeight -= pageHeight;
+                    position -= 841.89;
+                    //避免添加空白页
+                    if (leftHeight > 0) {
+                        pdf.addPage();
+                    }
+                }
+            }
+            pdf.save('test.pdf');
+        })
+    }
+</script>
+
+</html>

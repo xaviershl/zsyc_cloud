@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-autowire="byName" default-lazy-init="true"
+xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+xmlns:aop="http://www.springframework.org/schema/aop" xmlns:cache="http://www.springframework.org/schema/cache"  
+xmlns:context="http://www.springframework.org/schema/context" xmlns:jdbc="http://www.springframework.org/schema/jdbc"  
+xmlns:jee="http://www.springframework.org/schema/jee" xmlns:jms="http://www.springframework.org/schema/jms"  
+xmlns:lang="http://www.springframework.org/schema/lang" xmlns:mvc="http://www.springframework.org/schema/mvc"  
+xmlns:oxm="http://www.springframework.org/schema/oxm" xmlns:p="http://www.springframework.org/schema/p"  
+xmlns:task="http://www.springframework.org/schema/task" xmlns:tx="http://www.springframework.org/schema/tx"  
+xmlns:util="http://www.springframework.org/schema/util"  
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  
+http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd  
+http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache-3.1.xsd  
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd  
+http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd  
+http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.1.xsd  
+http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms-3.1.xsd  
+http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-3.1.xsd  
+http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd  
+http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm-3.1.xsd  
+http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.1.xsd  
+http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd  
+http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd"> 
+	
+	<!-- 查找spring容器中和请求的url同名的bean.spring在找不到handlerMapping的情况下会使用BeanNameUrlHandlerMapping.-->
+	<!-- <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" /> -->
+	
+	<!-- 此bean可实现手工目录导航，如注释部分所示 -->
+	<!-- <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping" >
+		<property name="mappings">  
+			<props>  
+				<prop key="/project.htm">projectController</prop>  
+				<prop key="/manage.htm">managementController</prop>  
+				<prop key="/user.htm">userController</prop>  
+				<prop key="/upload.htm">fileUploadController</prop>  
+			</props>  
+		</property> 
+	</bean> -->
+	
+	<context:component-scan base-package="xyz.ctrl" />
+	
+	<!--aop扫描注册，因为此aop是针对ctrl的方法， 所以要放在servlet容器的xml中 -->
+	<aop:aspectj-autoproxy proxy-target-class="false" expose-proxy="false"/>
+	 
+	<!-- 以下两个bean激活@RequestMapping,注释部分为3.0版本推荐，非注释部分为3.1版本推荐 -->
+	<!-- 
+	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>  
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" > 
+	-->
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>  
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter" >
+		<!-- 自定义拦截器，完成请求参数的字符串转Date,字符串忽略前后空白-->
+		<property name="webBindingInitializer">  
+			<bean class="xyz.util.zsyc.MyBindingInitializer" />  
+		</property>
+    	<property name="messageConverters">
+       		<list>
+	       		<bean id="mappingJacksonHttpMessageConverter" 
+	       			class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">  
+		    		<property name="supportedMediaTypes">  
+		        		<list>
+		            		<value>application/json;charset=UTF-8</value>
+		            		<value>text/html;charset=UTF-8</value><!-- 避免IE出现下载JSON文件的情况 -->
+		        		</list>
+		    		</property>
+		    		<!-- 自定义过滤器，完成返回参数的Date转字符串，null转字符串。 -->
+		    		<property name="objectMapper">
+		    			<bean class="xyz.util.zsyc.MvcJson">
+		    			</bean>
+		    		</property>
+				</bean>
+				<!-- <bean id="stringHttpMessageConverter"
+					class="org.springframework.http.converter.StringHttpMessageConverter">  
+					<constructor-arg value="UTF-8" index="0"></constructor-arg>避免出现乱码  
+					<property name="supportedMediaTypes">  
+						<list>  
+							<value>text/plain;charset=UTF-8</value>
+							<value>text/html;charset=UTF-8</value>
+						</list>
+					</property>
+				</bean> -->
+			</list>
+    	</property>
+	</bean>
+	
+	<!-- freemarker -->
+	<!-- 指定freemarker的视图解析器 -->
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+		<property name="exposeRequestAttributes" value="true" />
+		<property name="exposeSessionAttributes" value="true" />
+		<property name="exposeSpringMacroHelpers" value="true" />
+		<property name="viewClass" value="org.springframework.web.servlet.view.freemarker.FreeMarkerView"/>
+		<property name="cache" value="true"/>
+		<property name="suffix" value=".ftl"/>
+		<property name="contentType" value="text/html; charset=UTF-8"/>
+	</bean>
+	
+	<bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">  
+        <!-- 用来扫描.flt后缀的模版文件, value是指定义在那里 -->
+        <property name="templateLoaderPath" value="/temp/"/>
+        <property name="defaultEncoding" value="utf-8"/>
+        <property name="freemarkerSettings">
+            <props>
+                <prop key="template_update_delay">3600</prop>
+            </props>
+        </property>
+    </bean>  
+	
+	<!-- 上传附件必备bean，否则MultipartHttpServletRequest不可用,注意：这是spring mvc的东西，不能在filter里面使用 -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding">
+			<value>UTF-8</value>
+		</property>
+		<property name="maxUploadSize">
+			<value>20971520</value>
+		</property>
+	</bean>
+</beans>

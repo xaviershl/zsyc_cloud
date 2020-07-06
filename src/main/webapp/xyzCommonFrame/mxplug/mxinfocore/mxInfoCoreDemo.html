@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    #target{
+      width: 1200px;
+      height: 800px;
+    }
+  </style>
+</head>
+<body>
+    <div id="target"></div>
+</body>
+<script src="../mxInfoCore.js"></script>
+<script>
+  let a = new MxInfoCore({
+    // el: '', // 挂载元素id
+    id: 'demo', // 插件id
+    scene: '', // 插件场景
+    formkey: '', // 表单key
+    datakey: '', // 数据key
+    hasMxExcl: true, // 是否有excel
+    canEdit: true, // 是否编辑
+    disabled: true, // 是否可以设值
+    dataRowCount: 1, // 表单格子数
+    dataRowTitles: ['表单一'], // 表单title
+    btns:[{
+      id: '',
+      text:'按钮1',
+      handler: function(){
+        console.log(data)
+        console.log(a)
+        a.setData(data)
+      },
+    }], // 配置按钮
+    title: '', // title
+
+    width: '80%', // 插件宽
+    height: '80%', // 插件高
+    colWidth: '100%', // 列宽
+    colHeight: '300px', // 列高
+    inputWidth: '100%', // input宽
+    plugStyle: '', // 插件外框样式
+    marskStyle: '', // 插件marsk样式
+    headerStyle: '', // 插件header样式
+    contentStyle: '', // 插件content样式
+    footerStyle: '', // 插件footer样式
+    formTitleStyle: '', // 插件formTitle样式
+    buttonStyle: '', // 插件button样式
+    config: function (formkey) {
+      console.log('formkey', formkey)
+    }, // 配置表单
+    confirm: function (datakey, value) {
+      console.log('confirm', datakey, value)
+    }, // 提交数据
+    close: function (datakey, value) {
+      console.log('getData',a.getData())
+      console.log('close', datakey, value)
+    }, // 关闭弹框
+    onLoad: function () {
+      a.setData(data)
+    }, // 加载完回调
+    watch: function (newData, data) {
+      console.log('watch',newData, data)
+    }
+  })
+
+  let data = [
+    {
+      datakey: "170b3ef40bb8439f83b2c9bb7735fab9",
+      groupkey: "",
+      dataTitle: "234",
+      ico: 'icon-lock',
+      dataList: [
+        {
+        iidd: "ff8080816d633e13016d635056a30000",
+        numberCode: "ab022eee908141c2a3831515dcb19ed7",
+        formkey: "e118d7fe22904dac8c76bb0b1746f3de",
+        scene: "",
+        nameKey: "Meals",
+        nameCn: "厨师服务",
+        type: "text",
+        typeContent: "",
+        options: "",
+        rules: "",
+        remark: "",
+        possessor: "fc76e53b2be2488180fcfc946e7802ee",
+        addDate: "2019-09-24 20:47:52",
+        alterDate: "2019-09-24 20:47:52"},{
+          iidd: "c1daf20fbfda11e988f5000c295725b0",
+          numberCode: "c1daf21dbfda11e988f5000c295725b0",
+          nameKey: "ServiceTime",
+          nameCn: "服务时间",
+          type: "time",
+          typeContent: "要这样显示",
+          options: "",
+          scene: "SuperOrderShouldOut",
+          isDefault: 1,
+          sort: 999,
+          remark: "2.0迁移3.0自动生成|||",
+          possessor: "fc76e53b2be2488180fcfc946e7802ee",
+          addDate: "2018-10-30 17:13:28",
+          alterDate: "2020-01-06 17:25:55",
+          isShow: 0,
+          sceneCn: ""
+        }]
+    },{
+      datakey: "170b3ef40bb8439f83b2c9bb7735fab9",
+      groupkey: "",
+      dataTitle: "234",
+      ico: 'icon-lock',
+      dataList: [{iidd: "ff8080816d633e13016d635056a30000",
+        numberCode: "ab022eee908141c2a3831515dcb19ed7",
+        formkey: "e118d7fe22904dac8c76bb0b1746f3de",
+        scene: "",
+        nameKey: "Meals",
+        nameCn: "厨师服务",
+        type: "text",
+        typeContent: "",
+        options: "",
+        rules: "",
+        remark: "",
+        possessor: "fc76e53b2be2488180fcfc946e7802ee",
+        addDate: "2019-09-24 20:47:52",
+        alterDate: "2019-09-24 20:47:52"},{
+        iidd: "c1daf20fbfda11e988f5000c295725b0",
+        numberCode: "c1daf21dbfda11e988f5000c295725b0",
+        nameKey: "ServiceTime",
+        nameCn: "服务时间",
+        type: "time",
+        typeContent: "要这样显示",
+        options: "",
+        scene: "SuperOrderShouldOut",
+        isDefault: 1,
+        sort: 999,
+        remark: "2.0迁移3.0自动生成|||",
+        possessor: "fc76e53b2be2488180fcfc946e7802ee",
+        addDate: "2018-10-30 17:13:28",
+        alterDate: "2020-01-06 17:25:55",
+        isShow: 0,
+        sceneCn: ""
+      }]
+    },{
+      datakey: "170b3ef40bb8439f83b2c9bb7735fab9",
+      groupkey: "",
+      dataTitle: "234",
+      dataList: [{iidd: "ff8080816d633e13016d635056a30000",
+        numberCode: "ab022eee908141c2a3831515dcb19ed7",
+        formkey: "e118d7fe22904dac8c76bb0b1746f3de",
+        scene: "",
+        nameKey: "Meals",
+        nameCn: "厨师服务",
+        type: "text",
+        typeContent: "",
+        options: "",
+        rules: "",
+        remark: "",
+        possessor: "fc76e53b2be2488180fcfc946e7802ee",
+        addDate: "2019-09-24 20:47:52",
+        alterDate: "2019-09-24 20:47:52"},{
+        iidd: "c1daf20fbfda11e988f5000c295725b0",
+        numberCode: "c1daf21dbfda11e988f5000c295725b0",
+        nameKey: "ServiceTime",
+        nameCn: "服务时间",
+        type: "time",
+        typeContent: "要这样显示",
+        options: "",
+        scene: "SuperOrderShouldOut",
+        isDefault: 1,
+        sort: 999,
+        remark: "2.0迁移3.0自动生成|||",
+        possessor: "fc76e53b2be2488180fcfc946e7802ee",
+        addDate: "2018-10-30 17:13:28",
+        alterDate: "2020-01-06 17:25:55",
+        isShow: 0,
+        sceneCn: ""
+      }]
+    },]
+</script>
+</html>

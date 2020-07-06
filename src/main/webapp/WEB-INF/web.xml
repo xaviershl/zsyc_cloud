@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xmlns="http://java.sun.com/xml/ns/j2ee" 
+		xmlns:javaee="http://java.sun.com/xml/ns/javaee" 
+		xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" 
+		xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_3_0.xsd" version="3.0">
+		
+  <!--  
+  <display-name></display-name>	
+  <description></description>
+  -->
+  <context-param>  
+       <param-name>webAppRootKey</param-name>  
+       <param-value>webapp.zsyc_cloud</param-value>
+  </context-param>
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>
+    	classpath*:spring/applicationContext*.xml
+    	classpath*:hibernate/applicationContext*.xml
+    	<!-- classpath*:spring/spring-security*.xml -->
+    </param-value>
+  </context-param>
+ <context-param>
+   <param-name>logbackConfigLocation</param-name>
+   <param-value>classpath:config/logback.xml</param-value>
+ </context-param>
+
+  <session-config>
+    <session-timeout>30</session-timeout>
+  </session-config>
+  
+  
+  <filter>
+    <filter-name>encodingFilter</filter-name>
+    <filter-class>
+			org.springframework.web.filter.CharacterEncodingFilter
+		</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>encodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+    
+  <filter>
+    <filter-name>myExceptionFilter</filter-name>
+    <filter-class>
+		xyz.filter.MyExceptionFilter
+	</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>myExceptionFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <filter>
+    <filter-name>myProxyFilter</filter-name>
+    <filter-class>
+		xyz.filter.MyProxyFilter
+	</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>myProxyFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <!-- 国际化文件过滤器 -->
+  <filter>
+    <filter-name>myi18nFilter</filter-name>
+    <filter-class>
+		xyz.filter.Myi18nFilter
+	</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>myi18nFilter</filter-name>
+    <url-pattern>*.html</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>myi18nFilter</filter-name>
+    <url-pattern>*.js</url-pattern>
+  </filter-mapping>
+  <!-- 公用框架文件过滤器 
+  <filter>
+    <filter-name>myCommonFrameFilter</filter-name>
+    <filter-class>
+		xyz.zsyc.filter.MyCommonFrameFilter
+	</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>myCommonFrameFilter</filter-name>
+    <url-pattern>/xyzCommonFrame/*</url-pattern>
+  </filter-mapping>
+  -->
+  <filter>
+  	<filter-name>myAppFilter</filter-name>
+  	<filter-class>xyz.filter.MyAppFilter</filter-class>
+  	<init-param><!-- 无限制访问的后缀名，配合NOT_CHECK_URL参数使用 -->
+  		<param-name>SUFFIX_NOT_CHECK</param-name>
+  		<param-value>xyz</param-value>
+  	</init-param>
+  	<init-param><!-- 无限制访问的URL，配合SUFFIX_NOT_CHECK参数使用 -->
+  		<param-name>NOT_CHECK_URL</param-name>
+  		<param-value>
+			/InitWS/init_1239127awdasd_api,
+	        /LoginWS/login,
+	        /LoginWS/alterPassword,
+	        /LoginWS/loginByTaobao,
+	        /I18nWS/queryI18nLanguageByComboList,
+  			/AdminUserWS/createSecurityUserForMaytekofficalwebsite,
+	        /DownWS/baoy,
+			/AppSecurityUserWS/checkSecurityUserInviteCode,
+			/AppSecurityUserWS/sendPhoneVerificationCode,
+			/AppSecurityUserWS/sendLoginPhoneVerificationCode,
+			/AppSecurityUserWS/sendVerificationCodeByLoginPhone,
+			/AppSecurityUserWS/resetPasswordByPhoneVerificationCode,
+			/AppSecurityUserWS/initSecurityUserForApp,
+			/AppSecurityUserWS/bindSecurityUserWeChat,
+			/AppSecurityUserWS/unbindSecurityUserWeChatAndPhone,
+			/AppSecurityUserWS/loginByPhone,
+			/AppSecurityUserWS/loginByUnionid,
+			/CoreWS/updateOrderIsPay
+	        
+  		</param-value>
+  	</init-param>
+  	<init-param><!-- 特定开放的IP权限访问后缀，配合ONLYIP_CHECK_IP参数使用-->
+  		<param-name>SUFFIX_ONLYIP_CHECK</param-name>
+  		<param-value>api</param-value>
+  	</init-param>
+  	<init-param><!-- 需要做登录验证的访问后缀 -->
+  		<param-name>SUFFIX_LOGIN_CHECK</param-name>
+  		<param-value>do,tmp,xls,xlsx,zip,rar</param-value>
+  	</init-param>
+  	<init-param><!-- 需要做权限验证的访问后缀 -->
+  		<param-name>SUFFIX_POSITION_CHECK</param-name>
+  		<param-value>do</param-value>
+  	</init-param>
+  	<init-param><!-- 不使用RMI转发的访问后缀 -->
+  		<param-name>SUFFIX_NOT_RMI</param-name>
+  		<param-value>xls,xlsx,zip,rar</param-value>
+  	</init-param>
+  </filter>
+  <!-- 需要权限验证 -->
+  <filter-mapping>
+    <filter-name>myAppFilter</filter-name>
+    <url-pattern>*.do</url-pattern>
+  </filter-mapping>
+  <!-- 需要IP验证 -->
+   <filter-mapping>
+    <filter-name>myAppFilter</filter-name>
+    <url-pattern>*.api</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>myAppFilter</filter-name>
+    <url-pattern>*.tmp</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>myAppFilter</filter-name>
+    <url-pattern>*.xls</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>myAppFilter</filter-name>
+    <url-pattern>*.xlsx</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>myAppFilter</filter-name>
+    <url-pattern>*.zip</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>myAppFilter</filter-name>
+    <url-pattern>*.rar</url-pattern>
+  </filter-mapping>
+  <!-- 无需验证 -->
+  <filter-mapping>
+    <filter-name>myAppFilter</filter-name>
+    <url-pattern>*.xyz</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>myAppFilter</filter-name>
+    <url-pattern>/update.i18n</url-pattern>
+  </filter-mapping>
+  
+  <listener>
+    <listener-class>xyz.constant.MaytekListener</listener-class>
+  </listener>
+  <listener>
+  	<listener-class>ch.qos.logback.ext.spring.web.LogbackConfigListener</listener-class>
+  </listener>
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  
+	<servlet>
+	 	<servlet-name>springmvc</servlet-name>
+	  	<servlet-class>
+			org.springframework.web.servlet.DispatcherServlet
+		</servlet-class>
+		<init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath*:spring/springmvc-servlet*.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>springmvc</servlet-name>
+    	<url-pattern>*.do</url-pattern>
+  	</servlet-mapping>
+  	<servlet-mapping>
+    	<servlet-name>springmvc</servlet-name>
+    	<url-pattern>*.xyz</url-pattern>
+  	</servlet-mapping>
+  	<servlet-mapping>
+    	<servlet-name>springmvc</servlet-name>
+    	<url-pattern>*.init</url-pattern>
+  	</servlet-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  
+  <!-- error-page 配置错误页面，根据特定代码 -->
+  
+  <!-- security-constraint  -->
+  <!-- login-config  -->
+  <!-- security-role  -->
+  <!-- env-entry  -->
+  <!-- ejb-ref  -->
+  <!-- ejb-local-ref  -->
+</web-app>

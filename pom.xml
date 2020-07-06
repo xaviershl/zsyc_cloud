@@ -1,0 +1,36 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- 先把爹整进来 -->
+	<parent>
+		<groupId>cn.zsyc</groupId>
+		<artifactId>zsyc_library</artifactId>
+		<version>2.0.5</version>
+	</parent>
+
+	<!-- 项目的相关配置 -->
+	<artifactId>zsyc_cloud</artifactId>
+	<version>2.0.1</version>
+	<packaging>war</packaging>
+
+	<!-- 依赖的jar包们 -->
+	<dependencies>
+		
+		<!-- 如果还有其他依赖 就这么加
+		<dependency>
+			<groupId>cn.maytek</groupId>
+			<artifactId>maytek</artifactId>
+			<version>2.0.2</version>
+		</dependency>
+ 		-->
+ 		
+	</dependencies>
+
+	<!-- 最终打包文件名 
+	<build>
+		<finalName>xt_cloud</finalName>
+	</build>
+	-->
+	
+</project>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>后台</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <meta name='viewport' content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+    <meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT">
+    <!-- Set render engine for 360 browser -->
+    <meta name=renderer content=webkit>
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    
+</head>
+<script>
+    document.write('<script type="text/javascript" src="./xyzCommonFrame/js/mxImport.js?clearCache=' + Math.ceil(Math.random() * 1000) + '" id="mxImportId"><\/script>')
+</script>
+
+<script>
+    //按需定义
+    window.mxImport(['baseCSS', 'baseJS',
+        'uploader',
+        'cropper',
+        'MaytekF',
+        'cookie',
+        'cookie2',
+        'qrcode'
+    ]);
+</script>
+<body>
+	
+	功能目录
+	<div id="contentDiv">
+	<!-- 
+		<p>管理员</p>
+		<ul id="functionUl">
+			<li><a href="security/user.html" >用户管理</a></li>
+		</ul>
+		<p>管理员</p>
+		<ul id="functionUl_">
+			<li><a href="security/user.html" >用户管理</a></li>
+		</ul>
+		 -->
+	</div>
+	
+</body>
+	
+<script>
+	$(document).ready(function () {
+		
+		xyzAjax({
+			url : '../LoginWS/decideLogin.xyz',
+			data : {
+				apikey : getLoginCookie(),
+				lang : 'zh',
+				domain : ''
+			},
+			success : function(data){
+				if(data.status == 1){
+					
+					$('#contentDiv').html('');
+					
+					var appList = data.content.appList;
+					//将权限信息放入固定集合
+					localStorage.setItem("currentUserButtons",JSON.stringify(data.content.buttonList));
+					localStorage.setItem("securityUserInfo",JSON.stringify(data.content));
+					
+					var html = '';
+					
+					for(var i in appList){
+						var app = appList[i];
+						
+						html += '<p>'+app.nameCn+'</p>'
+							 + '<ul id="functionUl_'+app.appId+'" url="'+app.url+'">';
+							 
+						var functionList = app.securityFunctionList;
+						
+						for(var j in functionList){
+							
+							var f = functionList[j];
+							
+							html += '<li><a href="'+f.url+'" >'+f.nameCn+'</a></li>';
+							
+						}
+						
+						html += '</ul>';
+						
+					}
+					
+					$('#contentDiv').html(html);
+					
+				}else{
+					
+					alert(data.msg);
+					
+					window.location.href="index.html";
+				}
+			}
+		});
+		
+	});
+	
+</script>
+	
+</html>

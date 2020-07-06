@@ -1,0 +1,376 @@
+@bule: #376da0;
+@bgGray: #eeeeee;
+@bgTextGray: #999999;
+html, body {
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#app {
+    height: 100%;
+    font-size: 0.2rem;
+    background: #fff;
+    //头部开始
+    > header {
+        height: 0.88rem;
+        background-color: @bule;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.38rem;
+        padding: 0.25rem;
+        .iconfont{
+            font-size: 0.4rem;
+        }
+        .bgwhiterol {
+            width: 0.66rem;
+            height: 0.66rem;
+            border-radius: 50%;
+            background-color: #5583ae;
+            text-align: center;
+            line-height: 0.66rem;
+        }
+    }
+    //温馨提示开始
+    #tips{
+        position: fixed;
+        width: 100%;
+        height: 1rem;
+        display: flex;
+        padding: 0 0.2rem;
+        justify-content:space-between;
+        align-items: center;
+        background-color: #cf6161;
+        font-size: 0.24rem;
+        color: #fff;
+        transition: all 0.5s;
+        transform: translateY(-100%);
+        &.show{
+            transform: translateY(0%);
+        }
+    }
+    //温馨提示结束
+    //头部结束
+    //内容载体开始
+    #frameContainer {
+        padding: .6rem .3rem 0 .3rem;
+        position: relative;
+        height: calc(~'100% - 0.88rem');
+        footer {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            bottom: 0.1rem;
+            font-size: 0.14rem;
+            left: 0;
+            transform: scale(0.8);
+            color: @bgTextGray;
+        }
+        .frameCell{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            overflow-x: hidden;
+            background-color: #fff;
+            border: none;
+        }
+    }
+    //搜索栏开始
+    #searchBar {
+        position: relative;
+        width: 6.9rem;
+        height: .6rem;
+        background-color: @bgGray;
+        border-radius: 0.3rem;
+        display: flex;
+        padding: 0 0.3rem;
+        justify-content: space-between;
+        margin: 0 auto 0.6rem auto;
+        align-items: center;
+        > input {
+            height: 0.58rem;
+            border: none;
+            background: none;
+            width: 6rem;
+        }
+        > input::-webkit-input-placeholder {
+            color: @bgTextGray;
+        }
+        .icon-sou {
+            font-size: 0.4rem;
+            color: black;
+            font-weight: bolder;
+        }
+    }
+    #searchResContianer{
+        background: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        position: absolute;
+        top: 0.8rem;
+        left: 5%;
+        width: 90%;
+        border-radius: 0.08rem;
+        padding: 0.1rem;
+        .icon-toolClose{
+            position: absolute;
+            right: 0.02rem;
+            top: 0.02rem;
+        }
+        .searchResContianerCell{
+            padding: 0.1rem;
+            letter-spacing: 1px;
+            &:not(:last-child){
+                border-bottom: 1px dashed  #ccc ;
+            }
+        }
+    }
+    //搜索栏结束
+    //我的收藏开始
+    .myCollection {
+        margin-bottom: 0.6rem;
+    }
+    .frameList {
+        .title {
+            font-size: 0.3rem;
+            color: #333;
+            font-weight: bolder;
+        }
+        .frameListContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .frameListCell {
+                width: 3.3rem;
+                height: 1.16rem;
+                border: 1px solid #ccc;
+                border-radius: 0.05rem;
+                text-align: center;
+                margin-top: 0.3rem;
+                div {
+                    height: 0.5rem;
+                    line-height: 0.5rem;
+                    &:first-child {
+                        font-size: 0.28rem;
+                        font-weight: bolder;
+                        color: #555;
+                    }
+                    &:last-child {
+                        background-color: @bgGray;
+                        color: @bgTextGray;
+                        width: 2.8rem;
+                        margin: 0 auto;
+                        border-radius: 0.05rem;
+                    }
+                }
+            }
+        }
+    }
+    //我的收藏结束
+    //内容载体结束
+    //左侧菜单开始
+    #mainmeun {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        transition: all 0.3s;
+        height: 100%;
+    }
+    .meunshowstatus {
+        left: 0;
+    }
+    #meunCanvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100vw;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    #meunContainer {
+        width: 3.8rem;
+        height: 100%;
+        background-color: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0.4rem 0.4rem 0 0.4rem;
+        transition: all 0.3s;
+    }
+    #changeSystem {
+        border-radius: 0.08rem;
+        font-size: 0.28rem;
+        font-weight: bolder;
+        background-color: @bgGray;
+        position: relative;
+        height: 0.6rem;
+        align-items: center;
+        padding: 0 0.05rem;
+        overflow: hidden;
+        > select {
+            width: 100%;
+            border: none;
+            background: none;
+            height: 0.6rem;
+            font-weight: bolder;
+        }
+        > span {
+            display: inline-block;
+            height: 100%;
+            width: 0.6rem;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: @bgGray;
+            line-height: 0.6rem;
+            text-align: center;
+            .icon-xitongxuankuangxiala{
+                font-size: 0.5rem;
+            }
+        }
+    }
+    #mainmeunContainer{
+        height: calc(~'100% - 1rem');
+        margin-top: 0.4rem;
+        overflow-y: auto;
+        overflow-x: hidden;
+        
+        .mainmeunContainerCell{
+            header{
+                font-size: 0.28rem;
+                font-weight: bolder;
+                margin-bottom: 0.4rem;
+            }
+            >ul{
+                >li{
+                    margin-bottom: 0.4rem;
+                    padding-left: 0.2rem;
+                }
+            }
+        }
+    }
+    //左侧菜单结束
+    
+    //用户信息弹框开始
+    #userInfo{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        header{
+            color: #3E6BA0;
+            font-size: .35rem;
+            height: 0.8rem;
+            border-bottom: 2px solid #3E6BA0;
+            line-height: 0.7rem;
+            display: flex;
+            justify-content: space-between;
+        }
+        footer{
+            display: flex;
+            justify-content: space-around;
+            padding-top: 0.3rem;
+        }
+        #loginOut{
+            background-color:#ff7474 ;
+            color: #fff;
+        
+            width: 6rem;
+            text-align: center;
+            font-size: 0.3rem;
+            letter-spacing: 0.2rem;
+            text-indent: 0.2rem;
+            padding: 0.2rem 0;
+            border-radius: 0.08rem;
+        }
+    }
+    #userInfoCanvas{
+        height: 100%;
+        background-color: rgba(0,0,0,0.2);
+    }
+    #userInfoContainer{
+        width: 6rem;
+        background-color: #fff;
+        border-radius: 0.1rem;
+        overflow: hidden;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        padding: 0.3rem;
+    }
+
+    #userInfoListContainer{
+        background-color: @bgGray;
+        border-radius: 0.08rem;
+        overflow: hidden;
+        margin-top: 0.2rem;
+        color: #555;
+        .userInfoCell{
+            display: flex;
+            border-bottom: 1px solid #ccc;
+            &:last-child{
+                border-bottom: none
+            }
+            div{
+                padding: 0.2rem;
+              
+            }
+            >div:last-child{
+                width: calc(~"100% - 2rem")
+            }
+            >div:first-child{
+                width: 2rem;
+                background-color: #CDDDEE;
+                color: #999;
+                text-align: center;
+            }
+        }
+    }
+    //用户信息弹框结束
+}
+
+/* 进度条样式 */
+#progressBar {
+    position: fixed;
+    top: 0;
+    height: 4px;
+    background-color: #40c23e;
+    z-index:99;
+    width:0;
+    transition: all 0.5s;
+    animation: growUp 100s linear infinite;
+}
+@keyframes growUp {
+        2%{
+            width: 20%;
+        }
+      4%{
+          width: 80%;
+      }
+    20%{
+        width: 90%;
+    }
+      100%{
+          width: 98%;
+      }
+}
+#DIYContent{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color:#fff;
+    z-index: 2;
+}

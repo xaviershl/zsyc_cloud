@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>后台</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+   
+    <meta name='viewport' content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+    <meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT">
+    <!-- Set render engine for 360 browser -->
+    <meta name=renderer content=webkit>
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    
+</head>
+<script>
+    document.write('<script type="text/javascript" src="../xyzCommonFrame/js/mxImport.js?clearCache=' + Math.ceil(Math.random() * 1000) + '" id="mxImportId"><\/script>')
+</script>
+
+<script>
+    //按需定义
+    window.mxImport(['baseJS',
+        'uploader',
+        'cropper',
+        'MaytekF',
+        'cookie',
+        'cookie2',
+        'qrcode'
+    ]);
+</script>
+<body>
+	<a href="../main.html">返回主页</a>
+	<div id="btn_div">
+		
+	</div>
+	<div id="page_div">
+		第<input type="text" id="page" style="width:20px;" value="1"/>页, 每页<input type="text" id="rows" style="width:20px;" value="10"/>条
+		
+		<a href="javascript:;" onclick="query()">查询</a>
+	</div>
+	<div id="oper_div" style="display: none;"><!-- 一些弹出来的操作 在这里进行 -->
+		
+		编号<input type="text" id="numberCode" />
+		名称<input type="text" id="nameCn" />
+		应用
+		<select id="app" tempHtml="true">
+			
+		</select>
+		
+		<a href="javascript:;" onclick="submitAdd()" id="btn_add">添加</a>
+		<a href="javascript:;" onclick="submitEdit()" id="btn_edit">修改</a>
+	</div>
+	<div id="setPosition_div" style="display: none;"><!-- 一些弹出来的操作 在这里进行 -->
+		
+		<ul id="positionUl">
+			<li>
+				<input type="checkbox" id="position_checkbox_" value="" />呜呜呜呜
+			</li>
+		</ul>
+		
+		<a href="javascript:;" onclick="setPositionSubmit()">确定</a>
+		
+	</div>
+	<div>
+		<table id="dataListTable">
+			
+		</table>
+	</div>
+	
+</body>
+	
+<script>
+	
+
+	$(document).ready(function () {
+		
+		var btn_div_html = '<a href="javascript:;" style="margin-left:20px;" onclick="add()">添加</a>'
+						  + '<a href="javascript:;" style="margin-left:20px;" onclick="edit()">修改</a>'
+						  + '<a href="javascript:;" style="margin-left:20px;" onclick="deleteSelect()">删除</a>';
+		
+		if(xyzControlButton("buttonCode_s20200603120301")){//后台xml配置的权限代码
+			$('#btn_div').html(btn_div_html);
+		}
+		
+		query();
+		
+	});
+	
+	function query(){
+		
+		$('#dataListTable').html('');
+		
+		xyzAjax({
+			url : '../SecurityPositionWS/queryPositionList.do',
+			data : {
+				page : $('#page').val(),
+				rows : $('#rows').val(),
+				q : '{}'
+			},
+			success : function(data){
+				if(data.status == 1){
+					
+					var rows = data.content.rows;
+					var total = data.content.total;
+					
+					var html = '<tr>'
+							+ '<th><input type="checkbox" id="checkAll" onclick="checkAll()"></input></th>'
+							+ '<th>编号</th>'
+							+ '<th>名称</th>'
+							+ '<th>应用id</th>'
+							+ '<th>备注</th>'
+							+ '<th>修改日期</th>'
+							+ '</tr>';
+					
+					for(var i in rows){
+						var row = rows[i];
+						
+						html += '<tr id="row_'+row.numberCode+'">'
+								+ '<td><input type="checkbox" id="check_'+row.numberCode+'" numberCode="'+row.numberCode+'"></input></td>'
+								+ '<td>'+row.numberCode+'</td>'
+								+ '<td>'+row.nameCn+'</td>'
+								//+ '<td>'+row.appId+'</td>'
+								//+ '<td>'+row.appId+'<a href="javascript:;" onclick="editUserEnabled(\''+row.username+'\')">' + (row.enabled==1?'关':'开') + '</a></td>'
+								//+ '<td>'+row.appIdNameCn+'<a href="javascript:;" onclick="setPosition(\''+row.username+'\')">设置岗位</a></td>'
+								+ '<td>'+row.appIdNameCn+'</td>'
+								+ '<td>'+row.remark+'</td>'
+								+ '<td>'+row.alterDate+'</td>';
+					}
+					
+					$('#dataListTable').html(html);
+					
+				}else{
+					
+					alert(data.msg);
+					
+				}
+			}
+		});
+	}
+	
+	function checkAll(){
+		
+		if($('#checkAll').attr('checked') == 'checked'){
+			$('input[id^="check_"]').attr('checked',"checked");
+		}else{
+			$('input[id^="check_"]').removeAttr("checked");
+		}
+		
+	}
+
+	function add(){
+		
+		$('#oper_div').show();
+		$('#btn_add').show();
+		$('#btn_edit').hide();
+		
+		$('#app').html('');
+		
+		xyzAjax({
+			url : '../SecurityPositionWS/getSecurityAppInfoList.do',
+			data : {
+				
+			},
+			success : function(data){
+				if(data.status == 1){
+					
+					var tempHtml = '';
+					
+					var list = data.content;
+					
+					for(var i in list){
+						var obj = list[i];
+						
+						tempHtml += '<option value="'+obj.value+'">'+obj.text+'</option>';
+						
+					}
+					
+					$('#app').html(tempHtml);
+					
+				}else{
+					
+					alert(data.msg);
+					
+				}
+			}
+		});
+		
+	}
+	
+	function submitAdd(){
+		
+		var numberCode = $('#numberCode').val();
+		var nameCn = $('#nameCn').val();
+		var app = $('#app option:selected').val();
+		
+		xyzAjax({
+			url : '../SecurityPositionWS/addPosition.do',
+			data : {
+				numberCode : numberCode,
+				nameCn : nameCn,
+				app : app
+			},
+			success : function(data){
+				if(data.status == 1){
+					
+					alert("操作成功!");
+					
+				}else{
+					
+					alert(data.msg);
+					
+				}
+			}
+		});
+	}
+	
+	function edit(){
+		
+		var rows = $.map($('input[id^="check_"]') ,function(p){
+			
+			if($(p).attr('checked') == 'checked'){
+				return $(p).attr('numberCode');
+			}
+			
+		});
+		
+		if(rows.length != 1){
+			
+			alert("只能选择一条记录编辑!");
+			
+			return;
+		}
+		
+		var numberCode = rows[0];
+		
+		$('#numberCode').val(numberCode);
+		
+		$('#oper_div').show();
+		$('#btn_add').hide();
+		$('#btn_edit').show();
+		
+
+		$('#app').html('');
+		
+		xyzAjax({
+			url : '../SecurityPositionWS/getSecurityAppInfoList.do',
+			data : {
+				
+			},
+			success : function(data){
+				if(data.status == 1){
+					
+					var tempHtml = '';
+					
+					var list = data.content;
+					
+					for(var i in list){
+						var obj = list[i];
+						
+						tempHtml += '<option value="'+obj.value+'">'+obj.text+'</option>';
+						
+					}
+					
+					$('#app').html(tempHtml);
+					
+				}else{
+					
+					alert(data.msg);
+					
+				}
+			}
+		});
+		
+	}
+
+	function submitEdit(){
+		
+		var numberCode = $('#numberCode').val();
+		var nameCn = $('#nameCn').val();
+		var app = $('#app option:selected').val();
+		
+		xyzAjax({
+			url : '../SecurityPositionWS/editPosition.do',
+			data : {
+				numberCode : numberCode,
+				nameCn : nameCn,
+				app : app,
+				changeFlag : 'change'
+			},
+			success : function(data){
+				if(data.status == 1){
+					
+					alert("操作成功!");
+					
+				}else{
+					
+					alert(data.msg);
+					
+				}
+			}
+		});
+	}
+	
+	function deleteSelect(){
+		if(confirm('删除选中的?')){
+			
+			var users = $.map($('input[id^="check_"]') ,function(p){
+				
+				if($(p).attr('checked') == 'checked'){
+					return $(p).attr('username');
+				}else{
+					;
+				}
+				
+			}).join(',');
+			
+			xyzAjax({
+		        url: "../AdminUserWS/deleteUser.do",
+		        data: {
+		            users : users
+		        },
+		        success: function (data) {
+		            if (data.status == 1) {
+		            	query();
+		                alert("操作成功！");
+		            } else {
+		                alert(data.msg);
+		            }
+		        },
+		    });
+			
+		}
+	}
+
+	function editUserEnabled(username) {
+	    xyzAjax({
+	        url: "../AdminUserWS/editUserEnabled.do",
+	        data: {
+	            username: username
+	        },
+	        success: function (data) {
+	            if (data.status == 1) {
+	            	query();
+	                alert("操作成功！");
+	            } else {
+	                alert(data.msg);
+	            }
+	        },
+	    });
+	}
+	
+	function setPosition(){
+		/* 
+<div id="setPosition_div" style="display: none;"><!-- 一些弹出来的操作 在这里进行 -->
+		
+		<ul id="positionUl">
+			<li>
+				<input type="checkbox" id="position_checkbox_" value="" />呜呜呜呜
+			</li>
+		</ul>
+		
+		<a href="javascript:;" onclick="setPositionSubmit()">确定</a>
+		
+	</div> */
+		var html = '';
+		
+		xyzAjax({
+	        url: "../AdminUserWS/getAllPosition.do",
+	        data: {
+	            
+	        },
+	        success: function (data) {
+	            if (data.status == 1) {
+	            	
+	            	
+	            	
+	            	
+	            } else {
+	                alert(data.msg);
+	            }
+	        },
+	    });
+		
+		
+		$('#positionUl').html(html);
+		$('#setPosition_div').show();
+		
+	}
+	
+</script>
+	
+</html>

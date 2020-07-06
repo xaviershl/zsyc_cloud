@@ -1,0 +1,190 @@
+html,.body{
+			/*width: 100%;*/
+			/*height: 100%;*/
+			/*padding: 0;*/
+			/*margin: 0;*/
+		}
+		ul li{
+			list-style: none;
+		}
+		.mx_upload{
+			/*width: 60%;*/
+			/*height: 60%;*/
+			/*border: 1px solid #CCCCCC;*/
+			/*margin: auto;*/
+			/*position: absolute;*/
+			/*top: 10%;*/
+			/*bottom: 10%;*/
+			/*left: 10%;*/
+			/*right: 10%;*/
+			border-radius: 10px;
+		}
+		.mx_upload .mx_upload_content{
+			display: flex;
+			height: 90%;
+			margin-top: 10px;
+		}
+		.mx_upload_group{
+			border-radius: 6px;
+			background: #DFE9F2;
+			flex: 2;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+		}
+		.mx_upload_group .group_item{
+			cursor: pointer;
+			position: relative;
+		}
+		.mx_upload_group .group_item .delGroup{
+			position: absolute;
+			top: 0px;
+			color: #ccc;
+			height: 22px;
+			line-height: 22px;
+			text-align: right;
+			background: rgba(4,21,35,.4);
+			display: none;
+		}
+		.mx_upload_group .group_item .delGroup span{
+			margin: 5px;
+			color: #fafafa;
+		}
+		.mx_upload_group .new_group{
+			flex: .2;
+			cursor: pointer;
+			color:#3E6A9F;
+		}
+		.mx_upload_group .group_list{
+			flex: .8;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.mx_upload_group .group_list .activegroup{
+			color:#3E6A9F;
+		}
+		.mx_upload_group div{
+			border-bottom: 1px solid rgba(255,255,255,.6);
+			width: 100%;
+			height: 100%;
+			/*border-radius: 10px;*/
+		}
+		.mx_upload_imgshow{
+			flex: 8;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-content: center;
+		}
+		.mx_upload_imgshow .upload-ul{
+			overflow-y: auto;
+			flex:.8;
+		}
+		.mx_upload_imgshow .img_item{
+			width: 3.125rem;
+			height: 3.125rem;
+			/* border: 1px solid #ccc; */
+			padding: 2px;
+		}
+		.mx_upload_imgshow .uploadBtn{
+			height: 50px;
+			width: 100%;
+			text-align: center;
+			margin-bottom: 15px;
+		}
+		.mx_upload_imgshow .uploadBtn button{
+			background: #5caae6;
+			height: 32px;
+			padding: 0 25px;
+			color: #fff;
+			border-radius: 6px;
+			border: none;
+		}
+		.mx_upload_imgshow .uploadBtn button:hover{
+			background: #3092f5;
+		}
+		.upload-ul .img_item,.uploading-ul .img_item{
+			height: 100px;
+			width: 100px;
+			letter-spacing: normal;
+			display: inline-block;
+			border: 1px solid #e1e1e1;
+			margin: 10px 15px;
+			text-align: center;
+			position: relative;
+		}
+		.uploading-ul .img_item{
+			height: 80px;
+			width: 80px;
+		}
+		.mx_upload_imgshow .img_item .file {
+		    position: relative;
+		    display: inline-block;
+		    overflow: hidden;
+		    text-decoration: none;
+		    line-height: 80px;
+			color: #888;
+		}
+		.mx_upload_imgshow .img_item .file input {
+		    position: absolute;
+		    font-size: 100px;
+		    right: 0;
+		    top: 0;
+		    opacity: 0;
+		}
+		.upload-ul .img_item .text-area{
+			width: 100%;
+			height: 20px;
+			line-height: 20px;
+		}
+		.upload-ul .img_item .text-area input,.uploading-ul .img_item .text-area input{
+			width: 100%;
+			border: none;
+			text-align: center;
+		}
+		.mx_upload_imgshow .uploading-ul{
+			flex: .2;
+			border-bottom: 1px solid #F3F5F8;
+			overflow-x: hidden;
+		}
+		.mx_upload_imgshow .upload-ul .img_item .item,.mx_upload_imgshow .uploading-ul .img_item .item{
+			height:80px;
+			width: 100%;
+			border-radius: 10px;
+			border: 3px dashed #97def1;
+			position: relative;
+		}
+		.mx_upload_imgshow .uploading-ul .img_item .item{
+			height:80px;
+		}
+		.mx_upload_imgshow .upload-ul .img_item .item.image,.mx_upload_imgshow .uploading-ul .img_item .item.image{
+			border: none;
+			font-size: 0;
+		}
+		.mx_upload_imgshow .uploading-ul .img_item .item .delete-image,.mx_upload_imgshow .upload-ul .img_item .delete-image{
+			position: absolute;
+			/*width: 18px;*/
+			/*height: 18px;*/
+			top: -12.5px;
+			right: -12.5px;
+			color: #d81e06;
+			cursor: pointer;
+		}
+		.mx_upload_imgshow .upload-ul .img_item .delete-image{
+			display: none;
+		}
+		.mx_upload_imgshow .upload-ul .img_item .item .upload-image,.mx_upload_imgshow .uploading-ul .img_item .item .upload-image{
+			height: 100%;
+			width: 100%;
+			position: relative;
+			vertical-align:initial;
+		}
+		.flex_center{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}

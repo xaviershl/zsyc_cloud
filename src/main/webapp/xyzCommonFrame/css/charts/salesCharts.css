@@ -1,0 +1,179 @@
+
+html{
+    height: 100%;
+}
+.tbody{
+    font-family: '微软雅黑';
+    min-width: 1200px;
+
+}
+.contener{
+    width:1300px;
+    margin: 0px auto;
+
+}
+.top{
+    padding-top:40px ;
+}
+.topTime>span{
+    display: block;
+    background-color:#00acf8 ;
+    color:#FFFFFF;
+    font-size: 30px;
+    width: 180px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+.title{
+    font-size: 18px;
+}
+.title>span{
+    color:#00acf8;
+}
+.rankingToday{
+    padding-bottom: 10px;
+}
+.rankingTodayLeft{
+    text-align: center;
+    width: 60%;
+    float: left;
+}
+.ccenter{
+    padding-top: 5px;
+}
+.rankingTodayLeft>table{
+    width: 95%;
+    border-collapse:collapse;
+    border:2px solid darkgray;
+
+}
+.rankingTitle{
+    font-size: 14px;
+}
+.rankingTodayLeft th{
+    border:1px solid darkgray;
+    background-color: #fff;
+}
+.rankingTodayLeft td{
+    border:1px solid darkgray;
+    font-size: 12px;
+    line-height: 19px;
+}
+
+.rankingTodayLeft tr{
+    background:#ffffff;
+}
+.rankingTodayLeft tr:nth-child(2n+1){
+    background-color: #5bc6f5;
+}
+.rankingTodayRight{
+    width: 40%;
+    left:  60%;
+    display: inline-block;
+
+}
+.tadayPay{
+    height: 236px;
+    width: 91.6%;
+    background-color: #00acf8;
+    padding:15px 20px;
+}
+.tadayPayTitle{
+    height: 54px;
+    display: flex;
+}
+.tadayPayTitle>span{
+    color:#fff;
+    font-size:22px;
+    vertical-align: middle;
+    line-height: 40px;
+    flex: 1;
+}
+.salesTodayImg{
+    display:inline-block;
+    float: left;
+    width: 30px;
+    height: 40px;
+}
+.price{
+      font-size:64px;
+      color: #fff;
+}
+.before{
+    display: flex;
+}
+.beforeLeft{
+    flex: 1;
+    float: left;
+    margin-top: 40px;
+}
+.beforeLeft>span{
+     color: #fff;
+    font-size:14px;
+    display: block;
+}
+.beforeRight{
+    margin: 20px 50px 0 0 ;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    background: url("../image/salesCharts/y.png") no-repeat;
+    color:#FFFFFF;
+    float: right;
+    padding-top:24px;
+    text-align: center;
+}
+
+.todayStatisticalAnalysis{
+    clear: both;
+    margin-top: 40px;
+    display: flex;
+}
+.TSALeft{
+    width: 40%;
+    flex:4;
+    float: left;
+    display: inline-block;
+}
+.TSACenter{
+    flex: 3;
+    float: left;
+    width: 60%;
+    left: 40%;
+    display: inline-block;
+}
+.TSAright{
+    flex:3;
+    width: 30%;
+    left: 30%;
+    display: none;
+
+}
+.TodaySATitle{
+    display: block;
+    text-align: center;
+    font-weight: 600;
+    font-size:22px;
+    }
+.singleRanking{
+    margin: 0 15px;
+    text-align: center;
+}
+.singleRanking>span{
+    text-align: left;
+     display: block;
+    font-size:22px;
+    color:#00acf8;
+}
+.singleRankings{
+    font-size: 14px;
+    border-collapse:collapse;
+    width: 100%;
+}
+.singleRankings td{
+    line-height: 16px;
+    border-bottom: 1px solid darkgray;
+}

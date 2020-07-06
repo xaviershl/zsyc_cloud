@@ -1,0 +1,162 @@
+@charset "utf-8";
+/* CSS Document */
+.upload-img {
+    margin: 20px;
+    padding: 20px;
+    width: 920px;
+    font-family: "Microsoft YaHei";
+    border: #d1d1d1 2px dashed;
+}
+
+/*图片*/
+.xyzPicPreview-img-container {
+    position: relative;
+    /**width:920px;**/
+    height: 106px;
+}
+
+.xyzPicPreview-img-group-windon {
+    /**width:880px;**/
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    height: 106px;
+}
+
+.xyzPicPreview-img-group {
+    position: absolute;
+    /* width:100%; */
+    height: 100px;
+    padding-top: 6px;
+    margin: auto;
+}
+
+.xyzPicPreview-img-cover {
+    position: relative;
+}
+
+.xyzPicPreview-icon-remove {
+    display: none;
+    position: absolute;
+    color: #F00;
+    right: -5px;
+    top: -5px;
+    height: 16px;
+    width: 16px;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAYlJREFUeNpi/P//PwMy+MAmoQWkUoDYE4gVocL3gHgHEM8R+PXiGrJ6RpgBQI1sQKoPiDNZrM2ZWP08GJjUlMFy/27fY/i9aTvDnyMn/wG5s4G4EGjQd7AkyID3rOJsQLz7o5z+/997D/3HBX7vO/wfpAaodi9ID9hyqAFTQRJ/Hz35TwiA1EANmQI2AMjQBuI/v3cf+E8sAKkF6QHpBRnQ/9nRD0XBu6C4/7/OXoTzQWyQGDIA6QHpBRlw/cfEmSiSv85c+P9S0RBMgzTD2Mjgx4QZIAOugwz4+WvLTgxngjS8kNL+/xKI0TWD5YF6QHqZGPAARlAsMeAFv0AG3Pt39wGK6O+zFxnehyYyCG5ayiAExO/DksBiyODfnfsg6iEkEJ38UQMxMBbF2SA2jkCcADJAh4Jo1EEkJHmD/38fPyUuIQHVgvQgp0REUgYmV5w27z+CkZSxZyYbYGby92JgUlGCBhgwM23chjUzMWLJztpAKhWIPYAYZMIvIAZF0x5odr6CrB4gwAC9V1YwqlWwIwAAAABJRU5ErkJggg==');
+}
+
+.xyzPicPreview-img-cover:hover > .xyzPicPreview-icon-remove {
+    display: block;
+}
+
+.xyzPicPreview-imgs {
+    width: 100px;
+    height: 100px;
+    border-radius: 4px;
+}
+
+.xyzPicPreview-img-cover {
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.xyzPicPreview-left-move {
+    height: 26px;
+    width: 16px;
+    position: absolute;
+    left: 0;
+    top: 40px;
+    margin-right: 4px;
+}
+
+.xyzPicPreview-right-move {
+    height: 26px;
+    width: 16px;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    margin-left: 4px;
+}
+
+/*文件名和按钮*/
+.xyzPicPreview-file-btn-box {
+    overflow: hidden;
+    width: 920px;
+    margin-top: 18px;
+}
+
+.xyzPicPreview-filename {
+    float: left;
+    width: 68%;
+    /*border: #CCC 1px solid;*/
+    height: 36px;
+    font-size: 14px;
+    line-height: 36px;
+    padding: 0 8px;
+    box-shadow: 0.5px 0.5px 1px #CCC inset;
+}
+
+.xyzPicPreview-upload-btn {
+    position: relative;
+    width: 28%;
+    background-color: #73b6e5;
+    font-size: 14px;
+    font-weight: bold;
+    float: right;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    border-radius: 3px;
+    color: #fff;
+    box-shadow: inset;
+}
+
+.xyzPicPreview-progress-bar {
+    width: 10%;
+    background-color: #0d84d7;
+    height: 100%;
+    float: left;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.xyzPicPreview-btn-text {
+    position: absolute;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+.xyzPicPreview-clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+.xyzPicPreview-clearfix {
+    *zoom: 1;
+}
+
+.xyzPicPreview-tips {
+    position: absolute;
+    width: 100%;
+    color: #ccc;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 4px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#xyzUpLoadImageButton {
+    transition: all 0.5s;
+}
+
+#xyzUpLoadImageButton:hover {
+    box-shadow: 0 0 20px rgba(90, 170, 255, 1);
+}

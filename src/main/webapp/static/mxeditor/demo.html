@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>wangEditor demo</title>
+	<style>
+		.btn{
+			width: 100px;
+			height: 32px;
+			line-height: 32px;
+			background: #ccc;
+			margin-bottom: 10px;
+			text-align: center;
+			cursor: pointer;
+			float: left;
+		}
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		html,body{
+			width: 100%;
+			/*height: 100%;*/
+		}
+	</style>
+</head>
+<body>
+
+<div id="editor1" style="width:590px;height: 250px;margin-top: 20px;    position: relative;"></div>
+<div id="editor2" style="width:880px;height: 300px;margin-top: 20px;   position: relative;"></div>
+
+
+
+<div style="margin-top: 100px">
+	<div onclick="fun1('setValue','editor1')" class="btn">设置内容1</div>
+	<div onclick="fun1('clearValue','editor1')" class="btn">清除内容1</div>
+	<div onclick="fun1('getValue','editor1')" class="btn">获取内容1</div>
+	<div onclick="fun1('getText','editor1')" class="btn">获取纯文本1</div>
+</div>
+<div style="margin-top: 100px">
+	<div onclick="fun1('setValue','editor2')" style="margin-left: 40px" class="btn">设置内容2</div>
+	<div onclick="fun1('clearValue','editor2')" class="btn">清除内容2</div>
+	<div onclick="fun1('getValue','editor2')" class="btn">获取内容2</div>
+	<div onclick="fun1('getText','editor2')" class="btn">获取纯文本2</div>
+
+</div>
+<!-- 注意， 只需要引用 JS，无需引用任何 CSS ！！！-->
+<script type="text/javascript" src="wangEditor.js"></script>
+<script type="text/javascript" src="MxEditor.js"></script>
+<script type="text/javascript">
+
+	MxEditor.init('editor1',function (result) {
+		if (!result.status) {
+			alert(result.msg);
+		}
+	});
+	MxEditor.init('editor2',function (result) {
+		if (!result.status) {
+			alert(result.msg);
+		}
+	});
+
+	MxEditor.setSize('editor1',275,300);
+
+    function  fun1(key,id){
+		if(key === 'setValue'){
+			MxEditor.setValue(id,'<h3>这是添加的内容</h3>');
+		}
+		else if(key === 'clearValue'){
+			MxEditor.clearValue(id);
+		}else if(key === 'getText' || key === 'getValue') {
+			console.log(MxEditor[key](id))
+		}
+
+   }
+
+
+
+
+</script>
+</body>
+</html>
